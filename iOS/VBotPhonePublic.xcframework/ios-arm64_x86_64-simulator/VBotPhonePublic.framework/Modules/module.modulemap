@@ -1,0 +1,11 @@
+framework module VBotPhonePublic {
+  umbrella header "VBotPhonePublic.h"
+  export *
+
+  module * { export * }
+}
+
+module VBotPhonePublic.Swift {
+  header "VBotPhonePublic-Swift.h"
+  requires objc
+}
