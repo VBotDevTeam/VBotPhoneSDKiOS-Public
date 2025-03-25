@@ -13,8 +13,6 @@ iOS 12.0 trở lên
 
 ### Cocoapod
 
-Copy thư mục **Lib** từ project **VBot-iOS-SDK-Example** vào project của bạn
-
 Thêm **VBotPhoneSDK** vào Podfile
 
 ```swift
