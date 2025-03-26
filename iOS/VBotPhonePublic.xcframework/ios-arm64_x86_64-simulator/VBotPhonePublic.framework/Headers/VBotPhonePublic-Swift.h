@@ -353,6 +353,7 @@ SWIFT_CLASS("_TtC15VBotPhonePublic9VBotPhone")
 
 
 
+
 @class CXCallObserver;
 @class CXCall;
 
@@ -762,6 +763,7 @@ SWIFT_CLASS("_TtC15VBotPhonePublic9VBotPhone")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 

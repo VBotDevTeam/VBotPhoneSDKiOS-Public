@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'VBotPhoneSDKiOS-Public'
-  s.version      = '1.0.0'
+  s.version      = '1.0.1'
   s.authors      = "VBotDevTeam"
   s.summary      = "VBotPhoneSDKiOS-Public"
   s.description  = "VBot Phone SDK for iOS."
@@ -34,6 +34,5 @@ Pod::Spec.new do |s|
   s.dependency 'Starscream', '~> 4.0.8'
   s.dependency 'CocoaLumberjack', '~> 3.8.5'
   s.dependency 'Reachability', '~> 3.7.6'
-  s.dependency 'CryptoSwift', '~> 1.8.4'
    
 end

@@ -173,12 +173,9 @@ extension VBotPhonePublic.VBotPhone {
   public func userToken() -> Swift.String?
   public func getHotlines(completion: @escaping ([VBotPhonePublic.VBotHotline]?, (any Swift.Error)?) -> Swift.Void)
   public func startOutgoingCall(name: Swift.String, hotline: Swift.String, number: Swift.String, completion: @escaping (Swift.Result<Swift.Void, any Swift.Error>) -> Swift.Void)
-  public func startIncomingCall(callParams: VBotPhonePublic.CallParams, completion: @escaping () -> Swift.Void)
   public func isIncomingCall() -> Swift.Bool
   public func getCallName() -> Swift.String
   public func getCallState() -> VBotPhonePublic.VBotCallState
-  public func returnToCallVCIfNeeded()
-  public func hideCallVCIfNeeded()
   public func hasActiveCall() -> Swift.Bool
   public func endCall(completion: @escaping ((any Swift.Error)?) -> Swift.Void)
   public func endCallByPushkit(uuid: Foundation.UUID, completion: @escaping () -> Swift.Void)
