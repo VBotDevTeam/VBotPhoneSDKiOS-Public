@@ -21,7 +21,7 @@ platform :ios, '13.5'
 target 'Runner' do
   use_frameworks! :linkage => :static
 
-  pod 'VBotPhoneSDKiOS-Public', '1.0.9'
+  pod 'VBotPhoneSDKiOS-Public', '1.0.1'
 
   target 'RunnerTests' do
     inherit! :search_paths
