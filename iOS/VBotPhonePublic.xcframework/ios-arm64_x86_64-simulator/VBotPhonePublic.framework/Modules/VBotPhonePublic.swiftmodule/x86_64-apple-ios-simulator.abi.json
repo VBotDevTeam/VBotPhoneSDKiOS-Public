@@ -12678,9 +12678,9 @@
     {
       "filePath": "\/Users\/namhoang\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhonePublic\/Helpers\/VBotKeys.swift",
       "kind": "StringLiteral",
-      "offset": 336,
-      "length": 41,
-      "value": "\"https:\/\/apivbottest.vpmedia.vn\/open-api\""
+      "offset": 282,
+      "length": 26,
+      "value": "\"https:\/\/open-api.vbot.vn\""
     },
     {
       "filePath": "\/Users\/namhoang\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhonePublic\/Helpers\/VBotKeys.swift",
