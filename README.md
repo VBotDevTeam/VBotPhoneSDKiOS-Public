@@ -144,8 +144,6 @@ protocol VBotPhoneDelegate {
     // Trạng thái Microphone thay đổi
     func callMuteStateDidChange(muted: Bool)
 
-    // Nhấn vào nút nhắn tin
-    func messageButtonTapped()
 
 }
 ```
