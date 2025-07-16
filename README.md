@@ -105,9 +105,7 @@ Luồng cuộc gọi đến sẽ do SDK xử lý
 
 ### Lắng nghe các sự kiện
 
-Có 2 cách để lắng nghe các sự kiện trong VBot SDK
-
-1. **Sử dụng Protocol delegate**
+**Sử dụng Protocol delegate**
 
 Đăng ký nhận sự kiện VBot:
 
