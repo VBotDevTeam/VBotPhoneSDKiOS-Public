@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'VBotPhoneSDKiOS-Public'
-  s.version      = '1.1.0'
+  s.version      = '1.1.1'
   s.authors      = "VBotDevTeam"
   s.summary      = "VBotPhoneSDKiOS-Public"
   s.description  = "VBot Phone SDK for iOS."
@@ -25,8 +25,8 @@ Pod::Spec.new do |s|
   ]
 
   s.vendored_frameworks = [
-    "iOS/VBotPJSIP.xcframework",
-    "iOS/VBotPhonePublic.xcframework",
+    "iOS/VoiceLib.xcframework",
+    "iOS/VBotPhoneSDK.xcframework",
   ]
 
   s.resources =   ['iOS/resources/*.png']

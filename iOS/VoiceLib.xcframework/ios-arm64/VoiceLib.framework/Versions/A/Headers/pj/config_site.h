@@ -1,0 +1,14 @@
+#define PJ_CONFIG_IPHONE 1
+#define NDEBUG 1
+#define pj_assert(expr) ((void)0)
+#define PJ_ASSERT_LOG(expr,...) ((void)0)
+#define PJ_AUTOCONF 1
+#define PJMEDIA_HAS_RTCP_XR 1
+ #define PJ_HAS_IPV6 1
+#define PJ_IPHONE_OS_HAS_MULTITASKING_SUPPORT 1
+#define PJSIP_AUTH_HEADER_CACHING 1
+#define PJSIP_AUTH_AUTO_SEND_NEXT 1
+#define PJSUA_DISABLE_AUTO_SEND_100 1
+#define PJSUA_HAS_VIDEO 0
+#define PJ_ACTIVESOCK_TCP_IPHONE_OS_BG 0
+#include <VoiceLib/pj/config_site_sample.h>
