@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1 effective-5.10 (swiftlang-6.1.0.110.21 clang-1700.0.13.3)
+// swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
 // swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name VBotPhoneSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
 import AVFAudio
 import AVFoundation
 import AVKit
@@ -31,11 +31,13 @@ extension Swift.Array {
         self[self.startIndex ..< self.endIndex]
     }
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @inlinable internal subscript(safe index: Swift.Array<Element>.Index) -> Element? {
     get {
         return indices.contains(index) ? self[index] : nil
     }
   }
+  #endif
 }
 extension Swift.Array where Element == Swift.UInt8 {
   @usableFromInline
@@ -61,7 +63,9 @@ extension Swift.Array where Element == Swift.UInt8 {
   @objc final public let supportPopupCall: Swift.Bool
   @objc final public let includesCallsInRecents: Swift.Bool
   @objc final public let iconTemplateImageData: Foundation.Data?
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(supportPopupCall: Swift.Bool = false, includesCallsInRecents: Swift.Bool = false, iconTemplateImageData: Foundation.Data? = nil)
+  #endif
   @objc deinit
 }
 @inlinable internal func rotateLeft(_ value: Swift.UInt8, by: Swift.UInt8) -> Swift.UInt8 {
@@ -161,7 +165,9 @@ extension Swift.Array where Element == Swift.UInt8 {
   case missedCallTimeout = 9997
   case missedCallOther = 9998
   case unknownError = 9999
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -302,9 +308,15 @@ extension UIKit.UIView {
   }
 }
 extension UIKit.UIView {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public func animateDecelerationToVerticalEdge(withDuration duration: Foundation.TimeInterval, velocity: CoreFoundation.CGPoint, velocityThreshold: CoreFoundation.CGFloat = 500, boundingRect: CoreFoundation.CGRect, completion: ((Swift.Bool) -> Swift.Void)? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public func setIsHidden(_ isHidden: Swift.Bool, animated: Swift.Bool, completion: ((Swift.Bool) -> Swift.Void)? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public func setIsHidden(_ isHidden: Swift.Bool, withAnimationDuration duration: Foundation.TimeInterval, completion: ((Swift.Bool) -> Swift.Void)? = nil)
+  #endif
 }
 extension CoreFoundation.CGPoint {
   public var length: CoreFoundation.CGFloat {
@@ -322,11 +334,13 @@ extension UIKit.UIView.AnimationCurve {
     get
   }
 }
+#if compiler(>=5.3) && $NonescapableTypes
 extension Swift.Optional where Wrapped == UIKit.UIView.AnimationCurve {
   public var asAnimationOptions: UIKit.UIView.AnimationOptions {
     get
   }
 }
+#endif
 extension Foundation.Data {
   @usableFromInline
   internal var bytes: Swift.Array<Swift.UInt8> {
@@ -357,13 +371,17 @@ extension Foundation.Data {
 @usableFromInline
 internal typealias VBCipherOperationOnBlock = (_ block: Swift.ArraySlice<Swift.UInt8>) -> Swift.Array<Swift.UInt8>?
 public struct CallParams {
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(uuid: Foundation.UUID, name: Swift.String, avatar: Swift.String, hotline: Swift.String, number: Swift.String, transId: Swift.String, metaData: [Swift.String : Any]? = nil, typeCall: VBotPhoneSDK.TypeCall)
+  #endif
 }
 public enum SocketMethod : Swift.String, Swift.CaseIterable {
   case READY_CALL
   case UN_READY_CALL
   case HANGUP_CALL
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias AllCases = [VBotPhoneSDK.SocketMethod]
   public typealias RawValue = Swift.String
   nonisolated public static var allCases: [VBotPhoneSDK.SocketMethod] {
@@ -410,14 +428,20 @@ extension AVFAudio.AVAudioSession.RecordPermission {
     get
   }
   final public let reachabilityQueue: Dispatch.DispatchQueue
+  #if compiler(>=5.3) && $NonescapableTypes
   open var flags: SystemConfiguration.SCNetworkReachabilityFlags? {
     get
   }
+  #endif
   open var status: VBotPhoneSDK.NetworkReachabilityManager.NetworkReachabilityStatus {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   convenience public init?(host: Swift.String)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   convenience public init?()
+  #endif
   @objc deinit
   @discardableResult
   open func startListening(onQueue queue: Dispatch.DispatchQueue = .main, onUpdatePerforming listener: @escaping VBotPhoneSDK.NetworkReachabilityManager.Listener) -> Swift.Bool
@@ -431,8 +455,10 @@ internal enum VBPadding {
   case noPadding, zeroPadding, pkcs7, pkcs5, eme_pkcs1v15, emsa_pkcs1v15, iso78164, iso10126
   @usableFromInline
   internal func add(to: Swift.Array<Swift.UInt8>, blockSize: Swift.Int) -> Swift.Array<Swift.UInt8>
+  #if compiler(>=5.3) && $NonescapableTypes
   @usableFromInline
   internal func remove(from: Swift.Array<Swift.UInt8>, blockSize: Swift.Int?) -> Swift.Array<Swift.UInt8>
+  #endif
   @usableFromInline
   internal static func == (a: VBotPhoneSDK.VBPadding, b: VBotPhoneSDK.VBPadding) -> Swift.Bool
   @usableFromInline
@@ -497,27 +523,47 @@ extension Swift.String {
   @objc dynamic public func setConfig(config: VBotPhoneSDK.VBotConfig)
   @objc dynamic public func getConfig() -> VBotPhoneSDK.VBotConfig
   @objc dynamic public func getLocalizedStrings() -> VBotPhoneSDK.VBotLocalizedStrings
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public func connect(token: Swift.String, pushkitToken: Swift.String, completion: @escaping (Swift.String?, (any Swift.Error)?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public func disconnect(completion: @escaping ((any Swift.Error)?) -> Swift.Void)
+  #endif
   @objc dynamic public func isUserConnected() -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public func userDisplayName() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public func userToken() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public func getHotlines(completion: @escaping ([VBotPhoneSDK.VBotHotline]?, (any Swift.Error)?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public func getCallIntentFromUserActivity(_ string: Swift.String) -> VBotPhoneSDK.VBotCallIntent?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public func startOutgoingCall(displayName: Swift.String, number: Swift.String, hotline: Swift.String, completion: @escaping (_ success: Swift.Bool, _ error: Foundation.NSError?) -> Swift.Void)
+  #endif
   @objc dynamic public func startIncomingCall(payload: PushKit.PKPushPayload, completion: @escaping () -> Swift.Void)
   @objc dynamic public func returnToCallVCIfNeeded()
   @objc dynamic public func hideCallVCIfNeeded()
   @objc dynamic public func hasActiveCall() -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public func endCall(completion: @escaping ((any Swift.Error)?) -> Swift.Void)
+  #endif
   @objc dynamic public func muteCall()
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public func holdCall(completion: @escaping ((any Swift.Error)?) -> Swift.Void)
+  #endif
   @objc dynamic public func hasAudioBluetooth() -> Swift.Bool
   @objc dynamic public func isSpeakerOn() -> Swift.Bool
   @objc dynamic public func onOffSpeaker()
   @objc dynamic public func isCallHold() -> Swift.Bool
   @objc dynamic public func isCallMute() -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public func sendDTMF(digit: Swift.String, completion: @escaping ((any Swift.Error)?) -> Swift.Void)
+  #endif
   @objc dynamic public func endCallByPushkit(uuid: Foundation.UUID, completion: @escaping () -> Swift.Void)
 }
 extension VBotPhoneSDK.VBotPhone {
@@ -556,7 +602,9 @@ final public class VBSHA2 {
     public var rawValue: VBotPhoneSDK.VBSHA2.Variant.RawValue {
       get
     }
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: VBotPhoneSDK.VBSHA2.Variant.RawValue)
+    #endif
     @usableFromInline
     internal var h: Swift.Array<Swift.UInt64> {
       get
@@ -797,7 +845,9 @@ extension Swift.Collection {
   case noSIPAccount = 2022
   case incomingCallTimeout = 2023
   case unknownError = 9996
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -809,8 +859,12 @@ extension Swift.Collection {
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class VBotCrypto : ObjectiveC.NSObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public static func encrypt(number: Swift.String, name: Swift.String) -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public static func decrypt(_ hexEncoded: Swift.String) -> VBotPhoneSDK.VBotCallIntent?
+  #endif
   @objc override dynamic public init()
   @objc deinit
 }
@@ -839,7 +893,9 @@ internal protocol VBFinalizingDecryptModeWorker : VBotPhoneSDK.VBCipherModeWorke
 public enum TypeCall : Swift.String {
   case incoming
   case outgoing
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -851,6 +907,7 @@ public enum TypeCall : Swift.String {
   @objc final public let message: Swift.String
   @objc final public let data: [VBotPhoneSDK.VBotHotline]
   required public init(from decoder: any Swift.Decoder) throws
+  @objc public func logResponse()
   @objc deinit
 }
 @objc @objcMembers public class VBotHotline : ObjectiveC.NSObject, Swift.Decodable {
@@ -860,11 +917,21 @@ public enum TypeCall : Swift.String {
   @objc deinit
 }
 public struct VBotLogger {
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func verbose(file: Swift.String = #file, function: Swift.String = #function, line: Swift.UInt = #line, filter: Swift.String? = nil, _ message: Swift.String)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func debug(file: Swift.String = #file, function: Swift.String = #function, line: Swift.UInt = #line, filter: Swift.String? = nil, _ message: Swift.String)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func info(file: Swift.String = #file, function: Swift.String = #function, line: Swift.UInt = #line, filter: Swift.String? = nil, _ message: Swift.String)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func warning(file: Swift.String = #file, function: Swift.String = #function, line: Swift.UInt = #line, filter: Swift.String? = nil, _ message: Swift.String)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func error(file: Swift.String = #file, function: Swift.String = #function, line: Swift.UInt = #line, filter: Swift.String? = nil, _ message: Swift.String)
+  #endif
 }
 extension VBotPhoneSDK.VBLogFlag : Swift.Hashable {
   public func hash(into hasher: inout Swift.Hasher)
