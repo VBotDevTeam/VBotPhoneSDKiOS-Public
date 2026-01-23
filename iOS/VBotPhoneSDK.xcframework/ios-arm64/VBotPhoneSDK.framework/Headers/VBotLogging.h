@@ -13,7 +13,7 @@
 
 #define VBotLogVerbose(frmt, ...)    VBotLog(VBLogFlagVerbose,    __PRETTY_FUNCTION__, frmt, ## __VA_ARGS__)
 #define VBotLogDebug(frmt, ...)      VBotLog(VBLogFlagDebug,      __PRETTY_FUNCTION__, frmt, ## __VA_ARGS__)
-#define VBotLogInfo(frmt, ...)       VBotLog(VBLogFlagInfo,       __PRETTY_FUNCTION__, frmt, ## __VA_ARGS__)
+#define VBotLogDebug(frmt, ...)       VBotLog(VBLogFlagInfo,       __PRETTY_FUNCTION__, frmt, ## __VA_ARGS__)
 #define VBotLogWarning(frmt, ...)    VBotLog(VBLogFlagWarning,    __PRETTY_FUNCTION__, frmt, ## __VA_ARGS__)
 #define VBotLogError(frmt, ...)      VBotLog(VBLogFlagError,      __PRETTY_FUNCTION__, frmt, ## __VA_ARGS__)
 

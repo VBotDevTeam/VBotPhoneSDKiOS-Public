@@ -24018,7 +24018,7 @@
       "kind": "StringLiteral",
       "offset": 126,
       "length": 7,
-      "value": "\"1.1.3\""
+      "value": "\"1.1.4\""
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/Helpers\/VBotKeys.swift",
@@ -28657,14 +28657,14 @@
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/Logger\/VBotLogger.swift",
       "kind": "BooleanLiteral",
-      "offset": 3790,
+      "offset": 3838,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/Logger\/VBotLogger.swift",
       "kind": "StringLiteral",
-      "offset": 3970,
+      "offset": 4018,
       "length": 25,
       "value": "\"yyyy\/MM\/dd HH:mm:ss.SSS\""
     },

@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 // Simple macro definitions
-#define VBotLogInfo2(filter, message) [[VBotLoggerObjC shared] logInfo:filter message:message file:@(__FILE__) function:@(__PRETTY_FUNCTION__) line:__LINE__]
+#define VBotLogDebug2(filter, message) [[VBotLoggerObjC shared] logInfo:filter message:message file:@(__FILE__) function:@(__PRETTY_FUNCTION__) line:__LINE__]
 #define VBotLogDebug2(filter, message) [[VBotLoggerObjC shared] logDebug:filter message:message file:@(__FILE__) function:@(__PRETTY_FUNCTION__) line:__LINE__]
 #define VBotLogError2(filter, message) [[VBotLoggerObjC shared] logError:filter message:message file:@(__FILE__) function:@(__PRETTY_FUNCTION__) line:__LINE__]
 #define VBotLogWarning2(filter, message) [[VBotLoggerObjC shared] logWarning:filter message:message file:@(__FILE__) function:@(__PRETTY_FUNCTION__) line:__LINE__]
