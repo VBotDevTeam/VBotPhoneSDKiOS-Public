@@ -501,7 +501,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VBotPhone * 
 /// Lấy thông tin người gọi từ chuỗi mã hóa
 - (VBotCallIntent * _Nullable)getCallIntentFromUserActivity:(NSString * _Nonnull)string SWIFT_WARN_UNUSED_RESULT;
 /// Gọi đi
-- (void)startOutgoingCallWithDisplayName:(NSString * _Nonnull)displayName number:(NSString * _Nonnull)number hotline:(NSString * _Nonnull)hotline completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
+- (void)startOutgoingCallWithDisplayName:(NSString * _Nonnull)displayName number:(NSString * _Nonnull)number hotline:(NSString * _Nonnull)hotline externalCallId:(NSString * _Nullable)externalCallId completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)startIncomingCallWithPayload:(PKPushPayload * _Nonnull)payload completion:(void (^ _Nonnull)(void))completion;
 /// Quay trở lại màn hình cuộc gọi nếu có cuộc gọi đang hoạt động
 - (void)returnToCallVCIfNeeded;
@@ -557,6 +557,8 @@ SWIFT_PROTOCOL("_TtP12VBotPhoneSDK17VBotPhoneDelegate_")
 - (void)networkIsUnreachable;
 /// Mạng thay đổi
 - (void)internetConnectionChanged;
+/// Được gọi khi nhận được externalCallId (1 lần duy nhất khi bắt đầu cuộc gọi)
+- (void)didReceiveExternalCallId:(NSString * _Nonnull)externalCallId;
 @end
 
 #endif
@@ -1070,7 +1072,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VBotPhone * 
 /// Lấy thông tin người gọi từ chuỗi mã hóa
 - (VBotCallIntent * _Nullable)getCallIntentFromUserActivity:(NSString * _Nonnull)string SWIFT_WARN_UNUSED_RESULT;
 /// Gọi đi
-- (void)startOutgoingCallWithDisplayName:(NSString * _Nonnull)displayName number:(NSString * _Nonnull)number hotline:(NSString * _Nonnull)hotline completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
+- (void)startOutgoingCallWithDisplayName:(NSString * _Nonnull)displayName number:(NSString * _Nonnull)number hotline:(NSString * _Nonnull)hotline externalCallId:(NSString * _Nullable)externalCallId completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)startIncomingCallWithPayload:(PKPushPayload * _Nonnull)payload completion:(void (^ _Nonnull)(void))completion;
 /// Quay trở lại màn hình cuộc gọi nếu có cuộc gọi đang hoạt động
 - (void)returnToCallVCIfNeeded;
@@ -1126,6 +1128,8 @@ SWIFT_PROTOCOL("_TtP12VBotPhoneSDK17VBotPhoneDelegate_")
 - (void)networkIsUnreachable;
 /// Mạng thay đổi
 - (void)internetConnectionChanged;
+/// Được gọi khi nhận được externalCallId (1 lần duy nhất khi bắt đầu cuộc gọi)
+- (void)didReceiveExternalCallId:(NSString * _Nonnull)externalCallId;
 @end
 
 #endif

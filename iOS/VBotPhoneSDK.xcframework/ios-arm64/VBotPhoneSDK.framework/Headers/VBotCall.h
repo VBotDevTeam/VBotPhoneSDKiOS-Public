@@ -308,6 +308,12 @@ typedef NS_ENUM(NSInteger, VBotCallTerminateReason) {
 
 @property (readwrite, nonatomic) SipInvite * _Nullable invite;
 
+/**
+ *  External Call ID sẽ được chèn vào SIP INVITE header với tên "excid".
+ *  Chỉ áp dụng cho cuộc gọi đi (outbound call).
+ */
+@property (strong, nonatomic) NSString * _Nullable externalCallId;
+
 #pragma mark - Stats
 
 /**

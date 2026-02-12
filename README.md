@@ -1,4 +1,5 @@
 # VBotPhoneSDKiOS-Public
+
 VBot Phone SDK – Cho khách hàng khả năng tùy biến giao diện cuộc gọi.
 
 ## Code demo
@@ -21,7 +22,7 @@ platform :ios, '13.5'
 target 'Runner' do
   use_frameworks! :linkage => :static
 
-  pod 'VBotPhoneSDKiOS-Public', '1.1.5'
+  pod 'VBotPhoneSDKiOS-Public', '1.1.6'
 
   target 'RunnerTests' do
     inherit! :search_paths
@@ -41,7 +42,6 @@ end
 ```
 
 Trong đó phần **config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'** là bắt buộc để VBotPhoneSDK hoạt động với các phiên bản Swift mới hơn
-
 
 ## Cấu hình dự án
 
@@ -81,11 +81,12 @@ File **AppDelegate.swift**
 ```swift
 let config = VBotConfig(
             iconTemplateImageData: UIImage(named: "callkit-icon")?.pngData())
-            
+
 VBotPhone.sharedInstance.setup(with: config)
 ```
 
 Trong đó:
+
 - **config** là cấu hình tùy chọn cho SDK
 
 ### Gọi đi
@@ -97,11 +98,10 @@ VBotPhone.sharedInstance.startOutgoingCall()
 ```
 
 ### Gọi đến
+
 Luồng cuộc gọi đến sẽ do SDK xử lý
 
-
 ---
-
 
 ### Lắng nghe các sự kiện
 
@@ -135,16 +135,53 @@ protocol VBotPhoneDelegate {
 
     // Cuộc gọi kết thúc, cùng nguyên nhân
     func callEnded(reason: VBotEndCallReason)
-    
+
     // Lấy quyền microphone
     func microphonePermission(status: AVAudioSession.RecordPermission)
 
     // Trạng thái Microphone thay đổi
     func callMuteStateDidChange(muted: Bool)
 
+    // Nhận externalCallId (1 lần duy nhất khi bắt đầu cuộc gọi)
+    func didReceiveExternalCallId(_ externalCallId: String)
 
 }
 ```
+
+---
+
+### External Call ID
+
+SDK hỗ trợ truyền **External Call ID** (`externalCallId`) — một mã định danh cuộc gọi từ hệ thống bên ngoài.
+
+#### Gọi đi
+
+Truyền `externalCallId` (optional) khi gọi `startOutgoingCall`:
+
+```swift
+VBotPhone.sharedInstance.startOutgoingCall(
+    displayName: "Nguyễn Văn A",
+    number: "0901234567",
+    hotline: "1900xxxx",
+    externalCallId: "ext-call-123"  // optional
+) { success, error in
+    // ...
+}
+```
+
+#### Nhận externalCallId qua Delegate
+
+Implement delegate method `didReceiveExternalCallId` để nhận giá trị:
+
+```swift
+extension ViewController: VBotPhoneDelegate {
+    func didReceiveExternalCallId(_ externalCallId: String) {
+        print("ExternalCallId: \(externalCallId)")
+    }
+}
+```
+
+> **Lưu ý:** Delegate chỉ được gọi **1 lần** khi bắt đầu cuộc gọi, và chỉ khi `externalCallId` có giá trị (không nil, không rỗng).
 
 ---
 
@@ -152,58 +189,53 @@ protocol VBotPhoneDelegate {
 
 #### VBotEndCallReason và VBotError
 
-
 ```
     // Timeout
     case timeOut = -1001
-    
+
     // Khởi tạo không thành công
     case initiationFailed = 1001
-    
+
     case initiationFailed_1 = 1002
-    
+
     // Chưa cấp truyền mic
     case microphonePermissionDenied = 1003
-    
+
     case invalidPhoneNumber = 1004
-    
+
     // Không có dữ liệu từ máy chủ
     case noDataFromServer = 1005
-    
+
     case initiationFailed_2 = 1006
-    
+
     case initiationFailed_3 = 1007
-    
+
     // Dữ liệu không hợp lệ
     case dataInvalid = 1008
-    
+
     case initiationFailed_4 = 1009
-    
+
     // Xác thực thất bại
     case authenticatedFailed = 1010
-    
+
     // Đang có cuộc gọi khác
     case anotherCallInProgress = 1011
-    
+
     // Cuộc gọi kết thúc
     case normal = 1012
-    
+
     // Từ chối cuộc gọi
     case decline = 1013
-    
+
     // Không liên lạc được
     case temporarilyUnavailable = 1014
-    
+
     // Máy bận
     case busy = 1015
-    
+
     // reportNewIncomingCall lỗi
     case reportNewIncomingCallFailed = 1016
-    
+
     // Lỗi chưa xác định
     case unknownError = 1999
 ```
-
-
-
-

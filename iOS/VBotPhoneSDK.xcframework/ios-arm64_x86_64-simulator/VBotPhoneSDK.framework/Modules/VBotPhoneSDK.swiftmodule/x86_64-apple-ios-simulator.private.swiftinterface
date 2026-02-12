@@ -372,7 +372,7 @@ extension Foundation.Data {
 internal typealias VBCipherOperationOnBlock = (_ block: Swift.ArraySlice<Swift.UInt8>) -> Swift.Array<Swift.UInt8>?
 public struct CallParams {
   #if compiler(>=5.3) && $NonescapableTypes
-  public init(uuid: Foundation.UUID, name: Swift.String, avatar: Swift.String, hotline: Swift.String, number: Swift.String, transId: Swift.String, metaData: [Swift.String : Any]? = nil, typeCall: VBotPhoneSDK.TypeCall)
+  public init(uuid: Foundation.UUID, name: Swift.String, avatar: Swift.String, hotline: Swift.String, number: Swift.String, transId: Swift.String, metaData: [Swift.String : Any]? = nil, typeCall: VBotPhoneSDK.TypeCall, externalCallId: Swift.String? = nil)
   #endif
 }
 public enum SocketMethod : Swift.String, Swift.CaseIterable {
@@ -510,6 +510,7 @@ extension Swift.String {
   @objc optional func hideCallVC()
   @objc optional func networkIsUnreachable()
   @objc optional func internetConnectionChanged()
+  @objc optional func didReceiveExternalCallId(_ externalCallId: Swift.String)
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class VBotPhone : ObjectiveC.NSObject, CallKit.CXCallObserverDelegate {
   @objc public static let sharedInstance: VBotPhoneSDK.VBotPhone
@@ -543,7 +544,7 @@ extension Swift.String {
   @objc dynamic public func getCallIntentFromUserActivity(_ string: Swift.String) -> VBotPhoneSDK.VBotCallIntent?
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
-  @objc dynamic public func startOutgoingCall(displayName: Swift.String, number: Swift.String, hotline: Swift.String, completion: @escaping (_ success: Swift.Bool, _ error: Foundation.NSError?) -> Swift.Void)
+  @objc dynamic public func startOutgoingCall(displayName: Swift.String, number: Swift.String, hotline: Swift.String, externalCallId: Swift.String? = nil, completion: @escaping (_ success: Swift.Bool, _ error: Foundation.NSError?) -> Swift.Void)
   #endif
   @objc dynamic public func startIncomingCall(payload: PushKit.PKPushPayload, completion: @escaping () -> Swift.Void)
   @objc dynamic public func returnToCallVCIfNeeded()
