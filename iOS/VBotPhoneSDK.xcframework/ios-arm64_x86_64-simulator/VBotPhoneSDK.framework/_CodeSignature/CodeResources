@@ -170,7 +170,7 @@
 		</data>
 		<key>Headers/VBotPhoneSDK-Swift.h</key>
 		<data>
-		zJmBUcQzk8uuu0Kuw5WZs9SXC7g=
+		iPtzdpQ4GzVwQNOvI9WRw6jmK3I=
 		</data>
 		<key>Headers/VBotPhoneSDK.h</key>
 		<data>
@@ -210,15 +210,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		luHYlQGrpkDzVQlR+RURM9E7Zlc=
+		LvO/hE08qEp+6yRpbACQ5DJ/UW4=
 		</data>
 		<key>Modules/VBotPhoneSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		niup415l9Pa2mwFx57GA4G47n5Q=
+		GyN6E7DxR4EChvm9QdUMQga5FX0=
 		</data>
 		<key>Modules/VBotPhoneSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		sdeL76hIfQFRPAOSGMvFkLp2ftM=
+		YcoE64mFr/mfY54PqtWPFMub57A=
 		</data>
 		<key>Modules/VBotPhoneSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -226,19 +226,19 @@
 		</data>
 		<key>Modules/VBotPhoneSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		sdeL76hIfQFRPAOSGMvFkLp2ftM=
+		YcoE64mFr/mfY54PqtWPFMub57A=
 		</data>
 		<key>Modules/VBotPhoneSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		eiKwdQ39dc1xN5vzOx741yJjruY=
+		loVu+Y0rJsPjF424qz6eaxFRbmk=
 		</data>
 		<key>Modules/VBotPhoneSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		niup415l9Pa2mwFx57GA4G47n5Q=
+		GyN6E7DxR4EChvm9QdUMQga5FX0=
 		</data>
 		<key>Modules/VBotPhoneSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		Uodnk5DG28FRWPZu/WrY1W4QewM=
+		K9w7cP2JYI6BJ/9ZiPNwDJTLVMc=
 		</data>
 		<key>Modules/VBotPhoneSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -246,11 +246,11 @@
 		</data>
 		<key>Modules/VBotPhoneSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		Uodnk5DG28FRWPZu/WrY1W4QewM=
+		K9w7cP2JYI6BJ/9ZiPNwDJTLVMc=
 		</data>
 		<key>Modules/VBotPhoneSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		gGaAHFOmv+/TSG+x7sADgSmwlyM=
+		Q5eMPJ/29F10d7xcLGwFUxGWfck=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -602,7 +602,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			XszcuTyT0QpXb28wStrBEdpx8lMK/DblsD65PgfT1o0=
+			wZHbSspQyaYok/5+KfzqU25TJrY0zawfUlsTiU8Bc5g=
 			</data>
 		</dict>
 		<key>Headers/VBotPhoneSDK.h</key>
@@ -672,14 +672,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2XZp3uP8ojpu8+elTHwnGvhqzdf9fufsaVizUc8ppuo=
+			yc5qfUtBPQdY/5hhnjtwa3x/8FsoN8n7akZzJALSFyk=
 			</data>
 		</dict>
 		<key>Modules/VBotPhoneSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BSHxoDE4+qCoUMli1mXezoHJg8YC0/geoebRevXVyyY=
+			Cklkarotxb4LTsVVRddJD+BFjry01twsAlPqCW9dGdI=
 			</data>
 		</dict>
 		<key>Modules/VBotPhoneSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -693,28 +693,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			BSHxoDE4+qCoUMli1mXezoHJg8YC0/geoebRevXVyyY=
+			Cklkarotxb4LTsVVRddJD+BFjry01twsAlPqCW9dGdI=
 			</data>
 		</dict>
 		<key>Modules/VBotPhoneSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Q2+w0p17BwDU59hmtOGBZzc2p0LQi0zzvc+WmFJ4ORY=
+			josXBIwJMK7ZsWowc6RsHaOWsBM4koW0CUdcd5ak5Pc=
 			</data>
 		</dict>
 		<key>Modules/VBotPhoneSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2XZp3uP8ojpu8+elTHwnGvhqzdf9fufsaVizUc8ppuo=
+			yc5qfUtBPQdY/5hhnjtwa3x/8FsoN8n7akZzJALSFyk=
 			</data>
 		</dict>
 		<key>Modules/VBotPhoneSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qOPzxIQjEt0ks0O9vArB5Bcr4MCagiRLU2XY8OKs95g=
+			IdRXHNuzD3SvEirhIDTxZpwkazJ7BwiSpGQCfqFT31w=
 			</data>
 		</dict>
 		<key>Modules/VBotPhoneSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -728,14 +728,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			qOPzxIQjEt0ks0O9vArB5Bcr4MCagiRLU2XY8OKs95g=
+			IdRXHNuzD3SvEirhIDTxZpwkazJ7BwiSpGQCfqFT31w=
 			</data>
 		</dict>
 		<key>Modules/VBotPhoneSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			eiaHC/ygGqHy+IKtRT+ZQWO2n/bzel68AfgHe07Fu08=
+			Wcfy35lGPEtL2JV+/p5cewnH0K2Fn0OT0Nm1p1AQcz0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

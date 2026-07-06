@@ -76,54 +76,122 @@ Trong **Build Settings**, tìm **User Script Sandboxing**: Chọn **No**
 
 File **AppDelegate.swift**
 
-1. Trong hàm **application didFinishLaunchingWithOptions**, gọi hàm khởi tạo VBotPhone
+1. Trong hàm **application didFinishLaunchingWithOptions**, khởi tạo cấu hình `VBotConfig` và thiết lập `VBotPhone`:
+
+**Khởi tạo cơ bản:**
 
 ```swift
 let config = VBotConfig(
-            iconTemplateImageData: UIImage(named: "callkit-icon")?.pngData())
+    iconTemplateImageData: UIImage(named: "callkit-icon")?.pngData()
+)
 
 VBotPhone.sharedInstance.setup(with: config)
 ```
 
-Trong đó:
-
-- **config** là cấu hình tùy chọn cho SDK
-
-### Gọi đi
-
-Để thực hiện cuộc gọi đi, hãy sử dụng hàm **startOutgoingCall**
+**Khởi tạo đầy đủ với các tùy chọn cấu hình:**
 
 ```swift
-VBotPhone.sharedInstance.startOutgoingCall()
+let config = VBotConfig(
+    supportPopupCall: false,            // Mặc định: false. Cho phép hiển thị popup cuộc gọi.
+    includesCallsInRecents: false,      // Mặc định: false. Cho phép lưu lịch sử cuộc gọi vào nhật ký cuộc gọi hệ thống qua CallKit.
+    iconTemplateImageData: UIImage(named: "callkit-icon")?.pngData(), // Ảnh icon hiển thị trên giao diện CallKit.
+    environment: .production,           // Môi trường kết nối API. Mặc định là .production.
+    customBaseUrl: nil                  // URL API tùy chỉnh nếu muốn cấu hình thủ công (ghi đè cấu hình môi trường).
+)
+
+VBotPhone.sharedInstance.setup(with: config)
 ```
-
-### Gọi đến
-
-Luồng cuộc gọi đến sẽ do SDK xử lý
 
 ---
 
-### Lắng nghe các sự kiện
+### Gọi đi
 
-**Sử dụng Protocol delegate**
-
-Đăng ký nhận sự kiện VBot:
+Để thực hiện cuộc gọi đi, sử dụng hàm `startOutgoingCall`:
 
 ```swift
-  // Đăng ký nhận sự kiện cuộc gọi
-  VBotPhone.sharedInstance.addDelegate(self)
-
-  // Hủy đăng ký
-   deinit {
-       VBotPhone.sharedInstance.removeDelegate(self)
-   }
+VBotPhone.sharedInstance.startOutgoingCall(
+    displayName: "Nguyễn Văn A",
+    number: "0901234567",
+    hotline: "1900xxxx",
+    externalCallId: "ext-call-123"  // Mã định danh cuộc gọi từ hệ thống ngoài (Tùy chọn)
+) { success, error in
+    if success {
+        print("Bắt đầu cuộc gọi đi thành công")
+    } else {
+        print("Lỗi khởi tạo cuộc gọi đi: \(error?.localizedDescription ?? "")")
+    }
+}
 ```
 
-Các delegate method bao gồm
+---
+
+### Gọi đến
+
+Luồng cuộc gọi đến sẽ do SDK xử lý thông qua dịch vụ VoIP PushKit của Apple. Để nhận cuộc gọi, bạn cần thiết lập đăng ký PushKit trong `AppDelegate` và chuyển giao payload nhận được cho VBotPhone SDK.
+
+Ví dụ:
+
+```swift
+import PushKit
+import VBotPhoneSDK
+
+@main
+class AppDelegate: UIResponder, UIApplicationDelegate, PKPushRegistryDelegate {
+    var window: UIWindow?
+    var voipRegistry: PKPushRegistry!
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // ... Khởi tạo VBotConfig và setup VBotPhone ...
+
+        // Khởi tạo và đăng ký PKPushRegistry nhận cuộc gọi VoIP
+        voipRegistry = PKPushRegistry(queue: .main)
+        voipRegistry!.desiredPushTypes = [.voIP]
+        voipRegistry!.delegate = self
+
+        return true
+    }
+
+    // Nhận VoIP Push Token và gửi lên hệ thống của bạn để cấu hình nhận cuộc gọi
+    func pushRegistry(_ registry: PKPushRegistry, didUpdate pushCredentials: PKPushCredentials, for type: PKPushType) {
+        guard let token = registry.pushToken(for: .voIP) else { return }
+        let pushToken = token.map { String(format: "%.2hhx", $0) }.joined()
+        print("VoIP Push Token: \(pushToken)")
+    }
+
+    // Nhận cuộc gọi VoIP đến và chuyển giao payload cho SDK
+    func pushRegistry(_ registry: PKPushRegistry, didReceiveIncomingPushWith payload: PKPushPayload, for type: PKPushType, completion: @escaping () -> Void) {
+        if type == .voIP {
+            VBotPhone.sharedInstance.startIncomingCall(
+                payload: payload,
+                completion: completion
+            )
+        } else {
+            completion()
+        }
+    }
+}
+```
+
+---
+
+### Lắng nghe các sự kiện (Delegate)
+
+Đăng ký nhận các sự kiện cuộc gọi:
+
+```swift
+// Đăng ký nhận delegate
+VBotPhone.sharedInstance.addDelegate(self)
+
+// Hủy đăng ký nhận delegate
+deinit {
+    VBotPhone.sharedInstance.removeDelegate(self)
+}
+```
+
+Các delegate method được cung cấp bởi `VBotPhoneDelegate`:
 
 ```swift
 protocol VBotPhoneDelegate {
-
     // Trạng thái cuộc gọi thay đổi
     func callStateChanged(state: VBotCallState)
 
@@ -133,55 +201,123 @@ protocol VBotPhoneDelegate {
     // Cuộc gọi đến được chấp nhận (Khi user chọn chấp nhận cuộc gọi)
     func callAccepted()
 
-    // Cuộc gọi kết thúc, cùng nguyên nhân
+    // Cuộc gọi kết thúc, đi kèm nguyên nhân kết thúc cuộc gọi
     func callEnded(reason: VBotEndCallReason)
 
-    // Lấy quyền microphone
+    // Trạng thái quyền truy cập microphone
     func microphonePermission(status: AVAudioSession.RecordPermission)
 
-    // Trạng thái Microphone thay đổi
+    // Trạng thái tắt/mở âm microphone thay đổi
     func callMuteStateDidChange(muted: Bool)
 
-    // Nhận externalCallId (1 lần duy nhất khi bắt đầu cuộc gọi)
+    // Nhận externalCallId (chỉ gọi 1 lần duy nhất khi bắt đầu cuộc gọi có chứa ID này, nếu không nil hoặc không rỗng)
     func didReceiveExternalCallId(_ externalCallId: String)
 
+    // Yêu cầu hiển thị giao diện cuộc gọi
+    func showCallVC()
+
+    // Yêu cầu quay lại giao diện cuộc gọi
+    func returnToCallVC()
+
+    // Yêu cầu ẩn giao diện cuộc gọi
+    func hideCallVC()
+
+    // Mất kết nối mạng
+    func networkIsUnreachable()
+
+    // Kết nối mạng thay đổi
+    func internetConnectionChanged()
 }
 ```
 
 ---
 
-### External Call ID
+### Sử dụng với Objective-C
 
-SDK hỗ trợ truyền **External Call ID** (`externalCallId`) — một mã định danh cuộc gọi từ hệ thống bên ngoài.
+SDK tương thích hoàn toàn để sử dụng từ dự án Objective-C.
 
-#### Gọi đi
+#### 1. Import Module
 
-Truyền `externalCallId` (optional) khi gọi `startOutgoingCall`:
+Import module trong tệp `.m` hoặc `.mm` của bạn:
 
-```swift
-VBotPhone.sharedInstance.startOutgoingCall(
-    displayName: "Nguyễn Văn A",
-    number: "0901234567",
-    hotline: "1900xxxx",
-    externalCallId: "ext-call-123"  // optional
-) { success, error in
-    // ...
+```objc
+@import VBotPhoneSDK;
+```
+
+#### 2. Khởi tạo SDK trong AppDelegate
+
+```objc
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSData *iconData = UIImagePNGRepresentation([UIImage imageNamed:@"callkit-icon"]);
+
+    VBotConfig *config = [[VBotConfig alloc] initWithSupportPopupCall:NO
+                                               includesCallsInRecents:YES
+                                                iconTemplateImageData:iconData
+                                                          environment:VBotEnvironmentProduction
+                                                        customBaseUrl:nil];
+
+    [[VBotPhone sharedInstance] setupWith:config];
+    return YES;
 }
 ```
 
-#### Nhận externalCallId qua Delegate
+#### 3. Thực hiện cuộc gọi đi (Outgoing Call)
 
-Implement delegate method `didReceiveExternalCallId` để nhận giá trị:
-
-```swift
-extension ViewController: VBotPhoneDelegate {
-    func didReceiveExternalCallId(_ externalCallId: String) {
-        print("ExternalCallId: \(externalCallId)")
-    }
-}
+```objc
+[[VBotPhone sharedInstance] startOutgoingCallWithDisplayName:@"Nguyễn Văn A"
+                                                      number:@"0901234567"
+                                                     hotline:@"1900xxxx"
+                                              externalCallId:@"ext-call-123" // nil nếu không sử dụng
+                                                  completion:^(BOOL success, NSError * _Nullable error) {
+        if (success) {
+            NSLog(@"Gọi đi thành công");
+        } else {
+            NSLog(@"Gọi đi thất bại với lỗi: %@", error.localizedDescription);
+        }
+    }];
 ```
 
-> **Lưu ý:** Delegate chỉ được gọi **1 lần** khi bắt đầu cuộc gọi, và chỉ khi `externalCallId` có giá trị (không nil, không rỗng).
+#### 4. Nhận sự kiện cuộc gọi qua Delegate
+
+```objc
+@interface ViewController () <VBotPhoneDelegate>
+@end
+
+@implementation ViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [[VBotPhone sharedInstance] addDelegate:self];
+}
+
+- (void)dealloc {
+    [[VBotPhone sharedInstance] removeDelegate:self];
+}
+
+#pragma mark - VBotPhoneDelegate
+
+- (void)callStateChangedWithState:(enum VBotCallState)state {
+    NSLog(@"Trạng thái cuộc gọi thay đổi: %ld", (long)state);
+}
+
+- (void)callStarted {
+    NSLog(@"Cuộc gọi đi đã bắt đầu");
+}
+
+- (void)callAccepted {
+    NSLog(@"Cuộc gọi đã được chấp nhận");
+}
+
+- (void)callEndedWithReason:(enum VBotEndCallReason)reason {
+    NSLog(@"Cuộc gọi kết thúc với nguyên nhân: %ld", (long)reason);
+}
+
+- (void)didReceiveExternalCallId:(NSString *)externalCallId {
+    NSLog(@"Nhận được External Call ID: %@", externalCallId);
+}
+
+@end
+```
 
 ---
 

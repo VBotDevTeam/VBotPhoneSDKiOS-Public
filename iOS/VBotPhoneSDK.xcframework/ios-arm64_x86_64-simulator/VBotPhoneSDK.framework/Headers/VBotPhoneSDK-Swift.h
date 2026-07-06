@@ -313,7 +313,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @class VBotHotline;
 SWIFT_CLASS("_TtC12VBotPhoneSDK10HotlineRes")
 @interface HotlineRes : NSObject
-@property (nonatomic, readonly) NSInteger status;
 @property (nonatomic, readonly) NSInteger error;
 @property (nonatomic, readonly, copy) NSString * _Nonnull message;
 @property (nonatomic, readonly, copy) NSArray<VBotHotline *> * _Nonnull data;
@@ -360,12 +359,15 @@ SWIFT_CLASS("_TtC12VBotPhoneSDK14VBotCallReport")
 @end
 
 @class NSData;
+enum VBotEnvironment : NSInteger;
 SWIFT_CLASS("_TtC12VBotPhoneSDK10VBotConfig")
 @interface VBotConfig : NSObject
 @property (nonatomic, readonly) BOOL supportPopupCall;
 @property (nonatomic, readonly) BOOL includesCallsInRecents;
 @property (nonatomic, readonly, copy) NSData * _Nullable iconTemplateImageData;
-- (nonnull instancetype)initWithSupportPopupCall:(BOOL)supportPopupCall includesCallsInRecents:(BOOL)includesCallsInRecents iconTemplateImageData:(NSData * _Nullable)iconTemplateImageData OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly) enum VBotEnvironment environment;
+@property (nonatomic, readonly, copy) NSString * _Nullable customBaseUrl;
+- (nonnull instancetype)initWithSupportPopupCall:(BOOL)supportPopupCall includesCallsInRecents:(BOOL)includesCallsInRecents iconTemplateImageData:(NSData * _Nullable)iconTemplateImageData environment:(enum VBotEnvironment)environment customBaseUrl:(NSString * _Nullable)customBaseUrl OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -401,6 +403,12 @@ typedef SWIFT_ENUM(NSInteger, VBotEndCallReason, open) {
   VBotEndCallReasonNoSIPAccount = 2022,
   VBotEndCallReasonIncomingCallTimeout = 2023,
   VBotEndCallReasonUnknownError = 9996,
+};
+
+typedef SWIFT_ENUM(NSInteger, VBotEnvironment, open) {
+  VBotEnvironmentProduction = 0,
+  VBotEnvironmentStaging = 1,
+  VBotEnvironmentSandbox = 2,
 };
 
 SWIFT_CLASS("_TtC12VBotPhoneSDK11VBotHotline")
@@ -884,7 +892,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @class VBotHotline;
 SWIFT_CLASS("_TtC12VBotPhoneSDK10HotlineRes")
 @interface HotlineRes : NSObject
-@property (nonatomic, readonly) NSInteger status;
 @property (nonatomic, readonly) NSInteger error;
 @property (nonatomic, readonly, copy) NSString * _Nonnull message;
 @property (nonatomic, readonly, copy) NSArray<VBotHotline *> * _Nonnull data;
@@ -931,12 +938,15 @@ SWIFT_CLASS("_TtC12VBotPhoneSDK14VBotCallReport")
 @end
 
 @class NSData;
+enum VBotEnvironment : NSInteger;
 SWIFT_CLASS("_TtC12VBotPhoneSDK10VBotConfig")
 @interface VBotConfig : NSObject
 @property (nonatomic, readonly) BOOL supportPopupCall;
 @property (nonatomic, readonly) BOOL includesCallsInRecents;
 @property (nonatomic, readonly, copy) NSData * _Nullable iconTemplateImageData;
-- (nonnull instancetype)initWithSupportPopupCall:(BOOL)supportPopupCall includesCallsInRecents:(BOOL)includesCallsInRecents iconTemplateImageData:(NSData * _Nullable)iconTemplateImageData OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly) enum VBotEnvironment environment;
+@property (nonatomic, readonly, copy) NSString * _Nullable customBaseUrl;
+- (nonnull instancetype)initWithSupportPopupCall:(BOOL)supportPopupCall includesCallsInRecents:(BOOL)includesCallsInRecents iconTemplateImageData:(NSData * _Nullable)iconTemplateImageData environment:(enum VBotEnvironment)environment customBaseUrl:(NSString * _Nullable)customBaseUrl OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -972,6 +982,12 @@ typedef SWIFT_ENUM(NSInteger, VBotEndCallReason, open) {
   VBotEndCallReasonNoSIPAccount = 2022,
   VBotEndCallReasonIncomingCallTimeout = 2023,
   VBotEndCallReasonUnknownError = 9996,
+};
+
+typedef SWIFT_ENUM(NSInteger, VBotEnvironment, open) {
+  VBotEnvironmentProduction = 0,
+  VBotEnvironmentStaging = 1,
+  VBotEnvironmentSandbox = 2,
 };
 
 SWIFT_CLASS("_TtC12VBotPhoneSDK11VBotHotline")

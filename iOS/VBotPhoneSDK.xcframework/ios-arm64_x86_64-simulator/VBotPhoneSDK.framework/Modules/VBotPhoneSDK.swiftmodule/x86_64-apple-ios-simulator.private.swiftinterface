@@ -59,12 +59,32 @@ extension Swift.Array where Element == Swift.UInt8 {
   @usableFromInline
   internal func sha2(_ variant: VBotPhoneSDK.VBSHA2.Variant) -> [Element]
 }
+@objc public enum VBotEnvironment : Swift.Int {
+  case production
+  case staging
+  case sandbox
+  public var urlString: Swift.String {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @objc @objcMembers public class VBotConfig : ObjectiveC.NSObject {
   @objc final public let supportPopupCall: Swift.Bool
   @objc final public let includesCallsInRecents: Swift.Bool
   @objc final public let iconTemplateImageData: Foundation.Data?
+  @objc final public let environment: VBotPhoneSDK.VBotEnvironment
+  @objc final public let customBaseUrl: Swift.String?
   #if compiler(>=5.3) && $NonescapableTypes
-  @objc public init(supportPopupCall: Swift.Bool = false, includesCallsInRecents: Swift.Bool = false, iconTemplateImageData: Foundation.Data? = nil)
+  @objc public init(supportPopupCall: Swift.Bool = false, includesCallsInRecents: Swift.Bool = false, iconTemplateImageData: Foundation.Data? = nil, environment: VBotPhoneSDK.VBotEnvironment = .production, customBaseUrl: Swift.String? = nil)
   #endif
   @objc deinit
 }
@@ -903,7 +923,7 @@ public enum TypeCall : Swift.String {
   }
 }
 @objc @objcMembers public class HotlineRes : ObjectiveC.NSObject, Swift.Decodable {
-  @objc final public let status: Swift.Int
+  final public let status: Swift.Int?
   @objc final public let error: Swift.Int
   @objc final public let message: Swift.String
   @objc final public let data: [VBotPhoneSDK.VBotHotline]
@@ -1037,6 +1057,9 @@ final internal class VBStreamEncryptor {
   @objc @usableFromInline
   deinit
 }
+extension VBotPhoneSDK.VBotEnvironment : Swift.Equatable {}
+extension VBotPhoneSDK.VBotEnvironment : Swift.Hashable {}
+extension VBotPhoneSDK.VBotEnvironment : Swift.RawRepresentable {}
 extension VBotPhoneSDK.VBotCallLogErrorCode : Swift.Equatable {}
 extension VBotPhoneSDK.VBotCallLogErrorCode : Swift.Hashable {}
 extension VBotPhoneSDK.VBotCallLogErrorCode : Swift.RawRepresentable {}

@@ -56,6 +56,349 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "VBotEnvironment",
+        "printedName": "VBotEnvironment",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "production",
+            "printedName": "production",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(VBotPhoneSDK.VBotEnvironment.Type) -> VBotPhoneSDK.VBotEnvironment",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VBotEnvironment",
+                    "printedName": "VBotPhoneSDK.VBotEnvironment",
+                    "usr": "c:@M@VBotPhoneSDK@E@VBotEnvironment"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "VBotPhoneSDK.VBotEnvironment.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VBotEnvironment",
+                        "printedName": "VBotPhoneSDK.VBotEnvironment",
+                        "usr": "c:@M@VBotPhoneSDK@E@VBotEnvironment"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@VBotPhoneSDK@E@VBotEnvironment@VBotEnvironmentProduction",
+            "mangledName": "$s12VBotPhoneSDK0A11EnvironmentO10productionyA2CmF",
+            "moduleName": "VBotPhoneSDK",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 0
+          },
+          {
+            "kind": "Var",
+            "name": "staging",
+            "printedName": "staging",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(VBotPhoneSDK.VBotEnvironment.Type) -> VBotPhoneSDK.VBotEnvironment",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VBotEnvironment",
+                    "printedName": "VBotPhoneSDK.VBotEnvironment",
+                    "usr": "c:@M@VBotPhoneSDK@E@VBotEnvironment"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "VBotPhoneSDK.VBotEnvironment.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VBotEnvironment",
+                        "printedName": "VBotPhoneSDK.VBotEnvironment",
+                        "usr": "c:@M@VBotPhoneSDK@E@VBotEnvironment"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@VBotPhoneSDK@E@VBotEnvironment@VBotEnvironmentStaging",
+            "mangledName": "$s12VBotPhoneSDK0A11EnvironmentO7stagingyA2CmF",
+            "moduleName": "VBotPhoneSDK",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 1
+          },
+          {
+            "kind": "Var",
+            "name": "sandbox",
+            "printedName": "sandbox",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(VBotPhoneSDK.VBotEnvironment.Type) -> VBotPhoneSDK.VBotEnvironment",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VBotEnvironment",
+                    "printedName": "VBotPhoneSDK.VBotEnvironment",
+                    "usr": "c:@M@VBotPhoneSDK@E@VBotEnvironment"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "VBotPhoneSDK.VBotEnvironment.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VBotEnvironment",
+                        "printedName": "VBotPhoneSDK.VBotEnvironment",
+                        "usr": "c:@M@VBotPhoneSDK@E@VBotEnvironment"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@VBotPhoneSDK@E@VBotEnvironment@VBotEnvironmentSandbox",
+            "mangledName": "$s12VBotPhoneSDK0A11EnvironmentO7sandboxyA2CmF",
+            "moduleName": "VBotPhoneSDK",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 2
+          },
+          {
+            "kind": "Var",
+            "name": "urlString",
+            "printedName": "urlString",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:12VBotPhoneSDK0A11EnvironmentO9urlStringSSvp",
+            "mangledName": "$s12VBotPhoneSDK0A11EnvironmentO9urlStringSSvp",
+            "moduleName": "VBotPhoneSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:12VBotPhoneSDK0A11EnvironmentO9urlStringSSvg",
+                "mangledName": "$s12VBotPhoneSDK0A11EnvironmentO9urlStringSSvg",
+                "moduleName": "VBotPhoneSDK",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "description",
+            "printedName": "description",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:12VBotPhoneSDK0A11EnvironmentO11descriptionSSvp",
+            "mangledName": "$s12VBotPhoneSDK0A11EnvironmentO11descriptionSSvp",
+            "moduleName": "VBotPhoneSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:12VBotPhoneSDK0A11EnvironmentO11descriptionSSvg",
+                "mangledName": "$s12VBotPhoneSDK0A11EnvironmentO11descriptionSSvg",
+                "moduleName": "VBotPhoneSDK",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "VBotPhoneSDK.VBotEnvironment?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VBotEnvironment",
+                    "printedName": "VBotPhoneSDK.VBotEnvironment",
+                    "usr": "c:@M@VBotPhoneSDK@E@VBotEnvironment"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:12VBotPhoneSDK0A11EnvironmentO8rawValueACSgSi_tcfc",
+            "mangledName": "$s12VBotPhoneSDK0A11EnvironmentO8rawValueACSgSi_tcfc",
+            "moduleName": "VBotPhoneSDK",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:12VBotPhoneSDK0A11EnvironmentO8rawValueSivp",
+            "mangledName": "$s12VBotPhoneSDK0A11EnvironmentO8rawValueSivp",
+            "moduleName": "VBotPhoneSDK",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:12VBotPhoneSDK0A11EnvironmentO8rawValueSivg",
+                "mangledName": "$s12VBotPhoneSDK0A11EnvironmentO8rawValueSivg",
+                "moduleName": "VBotPhoneSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "c:@M@VBotPhoneSDK@E@VBotEnvironment",
+        "mangledName": "$s12VBotPhoneSDK0A11EnvironmentO",
+        "moduleName": "VBotPhoneSDK",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "enumRawTypeName": "Int",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "VBotConfig",
         "printedName": "VBotConfig",
         "children": [
@@ -226,9 +569,125 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "environment",
+            "printedName": "environment",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "VBotEnvironment",
+                "printedName": "VBotPhoneSDK.VBotEnvironment",
+                "usr": "c:@M@VBotPhoneSDK@E@VBotEnvironment"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@VBotPhoneSDK@objc(cs)VBotConfig(py)environment",
+            "mangledName": "$s12VBotPhoneSDK0A6ConfigC11environmentAA0A11EnvironmentOvp",
+            "moduleName": "VBotPhoneSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VBotEnvironment",
+                    "printedName": "VBotPhoneSDK.VBotEnvironment",
+                    "usr": "c:@M@VBotPhoneSDK@E@VBotEnvironment"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@VBotPhoneSDK@objc(cs)VBotConfig(im)environment",
+                "mangledName": "$s12VBotPhoneSDK0A6ConfigC11environmentAA0A11EnvironmentOvg",
+                "moduleName": "VBotPhoneSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "customBaseUrl",
+            "printedName": "customBaseUrl",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@VBotPhoneSDK@objc(cs)VBotConfig(py)customBaseUrl",
+            "mangledName": "$s12VBotPhoneSDK0A6ConfigC13customBaseUrlSSSgvp",
+            "moduleName": "VBotPhoneSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@VBotPhoneSDK@objc(cs)VBotConfig(im)customBaseUrl",
+                "mangledName": "$s12VBotPhoneSDK0A6ConfigC13customBaseUrlSSSgvg",
+                "moduleName": "VBotPhoneSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(supportPopupCall:includesCallsInRecents:iconTemplateImageData:)",
+            "printedName": "init(supportPopupCall:includesCallsInRecents:iconTemplateImageData:environment:customBaseUrl:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -264,13 +723,35 @@
                 ],
                 "hasDefaultArg": true,
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "VBotEnvironment",
+                "printedName": "VBotPhoneSDK.VBotEnvironment",
+                "hasDefaultArg": true,
+                "usr": "c:@M@VBotPhoneSDK@E@VBotEnvironment"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Constructor",
-            "usr": "c:@M@VBotPhoneSDK@objc(cs)VBotConfig(im)initWithSupportPopupCall:includesCallsInRecents:iconTemplateImageData:",
-            "mangledName": "$s12VBotPhoneSDK0A6ConfigC16supportPopupCall22includesCallsInRecents21iconTemplateImageDataACSb_Sb10Foundation0O0VSgtcfc",
+            "usr": "c:@M@VBotPhoneSDK@objc(cs)VBotConfig(im)initWithSupportPopupCall:includesCallsInRecents:iconTemplateImageData:environment:customBaseUrl:",
+            "mangledName": "$s12VBotPhoneSDK0A6ConfigC16supportPopupCall22includesCallsInRecents21iconTemplateImageData11environment13customBaseUrlACSb_Sb10Foundation0O0VSgAA0A11EnvironmentOSSSgtcfc",
             "moduleName": "VBotPhoneSDK",
-            "objc_name": "initWithSupportPopupCall:includesCallsInRecents:iconTemplateImageData:",
+            "objc_name": "initWithSupportPopupCall:includesCallsInRecents:iconTemplateImageData:environment:customBaseUrl:",
             "declAttributes": [
               "AccessControl",
               "ObjC"
@@ -15080,20 +15561,27 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
-            "usr": "c:@M@VBotPhoneSDK@objc(cs)HotlineRes(py)status",
-            "mangledName": "$s12VBotPhoneSDK10HotlineResC6statusSivp",
+            "usr": "s:12VBotPhoneSDK10HotlineResC6statusSiSgvp",
+            "mangledName": "$s12VBotPhoneSDK10HotlineResC6statusSiSgvp",
             "moduleName": "VBotPhoneSDK",
             "declAttributes": [
               "Final",
               "HasStorage",
-              "AccessControl",
-              "ObjC"
+              "AccessControl"
             ],
             "isLet": true,
             "hasStorage": true,
@@ -15105,19 +15593,26 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
+                    "name": "Optional",
+                    "printedName": "Swift.Int?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "c:@M@VBotPhoneSDK@objc(cs)HotlineRes(im)status",
-                "mangledName": "$s12VBotPhoneSDK10HotlineResC6statusSivg",
+                "usr": "s:12VBotPhoneSDK10HotlineResC6statusSiSgvg",
+                "mangledName": "$s12VBotPhoneSDK10HotlineResC6statusSiSgvg",
                 "moduleName": "VBotPhoneSDK",
                 "implicit": true,
                 "declAttributes": [
-                  "Final",
-                  "ObjC"
+                  "Final"
                 ],
                 "accessorKind": "get"
               }
@@ -24056,22 +24551,36 @@
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/Models\/VBotConfig.swift",
+      "kind": "IntegerLiteral",
+      "offset": 170,
+      "length": 7,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/Models\/VBotConfig.swift",
+      "kind": "IntegerLiteral",
+      "offset": 187,
+      "length": 7,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/Models\/VBotConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 323,
+      "offset": 1032,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/Models\/VBotConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 361,
+      "offset": 1078,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/Models\/VBotUser.swift",
       "kind": "StringLiteral",
-      "offset": 539,
+      "offset": 552,
       "length": 14,
       "value": "\"websocketUrl\""
     },
@@ -24099,77 +24608,77 @@
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/Helpers\/VBotKeys.swift",
       "kind": "StringLiteral",
-      "offset": 253,
-      "length": 31,
-      "value": "\"https:\/\/open-api.vbot.vn\/v2.0\""
+      "offset": 254,
+      "length": 35,
+      "value": "\"https:\/\/open-api-h01.vbot.vn\/v3.0\""
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/Helpers\/VBotKeys.swift",
       "kind": "StringLiteral",
-      "offset": 400,
+      "offset": 476,
       "length": 17,
       "value": "\"VBotDisplayName\""
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/Helpers\/VBotKeys.swift",
       "kind": "StringLiteral",
-      "offset": 445,
+      "offset": 521,
       "length": 11,
       "value": "\"VBotToken\""
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/Helpers\/VBotKeys.swift",
       "kind": "StringLiteral",
-      "offset": 483,
+      "offset": 559,
       "length": 9,
       "value": "\"VBotPID\""
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/Helpers\/VBotKeys.swift",
       "kind": "StringLiteral",
-      "offset": 518,
+      "offset": 594,
       "length": 9,
       "value": "\"VBotSID\""
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/Helpers\/VBotKeys.swift",
       "kind": "StringLiteral",
-      "offset": 553,
+      "offset": 629,
       "length": 9,
       "value": "\"VBotWSS\""
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/Helpers\/VBotKeys.swift",
       "kind": "StringLiteral",
-      "offset": 594,
+      "offset": 670,
       "length": 14,
       "value": "\"VBotUsername\""
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/Helpers\/VBotKeys.swift",
       "kind": "StringLiteral",
-      "offset": 639,
+      "offset": 715,
       "length": 14,
       "value": "\"VBotPassword\""
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/Helpers\/VBotKeys.swift",
       "kind": "StringLiteral",
-      "offset": 682,
+      "offset": 758,
       "length": 12,
       "value": "\"VBotDomain\""
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/Helpers\/VBotKeys.swift",
       "kind": "StringLiteral",
-      "offset": 721,
+      "offset": 797,
       "length": 10,
       "value": "\"VBotPort\""
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/Helpers\/VBotKeys.swift",
       "kind": "StringLiteral",
-      "offset": 763,
+      "offset": 839,
       "length": 15,
       "value": "\"VBotTransport\""
     },
@@ -26032,139 +26541,139 @@
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
       "kind": "BooleanLiteral",
       "offset": 2640,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
-      "kind": "BooleanLiteral",
-      "offset": 2743,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
-      "kind": "BooleanLiteral",
-      "offset": 2780,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
-      "kind": "BooleanLiteral",
-      "offset": 2816,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
-      "kind": "BooleanLiteral",
-      "offset": 2850,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
-      "kind": "Array",
-      "offset": 2983,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
-      "kind": "Array",
-      "offset": 3031,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
-      "kind": "BooleanLiteral",
-      "offset": 3245,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
-      "kind": "BooleanLiteral",
-      "offset": 3287,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
-      "kind": "StringLiteral",
-      "offset": 3323,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
-      "kind": "Array",
-      "offset": 3522,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3600,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
-      "kind": "BooleanLiteral",
-      "offset": 3646,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
-      "kind": "StringLiteral",
-      "offset": 3709,
-      "length": 23,
-      "value": "\"com.VBot.callLogQueue\""
-    },
-    {
-      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
-      "kind": "BooleanLiteral",
-      "offset": 3785,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
-      "kind": "StringLiteral",
-      "offset": 33675,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
-      "kind": "BooleanLiteral",
-      "offset": 34150,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
       "kind": "BooleanLiteral",
-      "offset": 34695,
+      "offset": 2742,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2779,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2815,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2849,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
+      "kind": "Array",
+      "offset": 2982,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
+      "kind": "Array",
+      "offset": 3030,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3244,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3286,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
+      "kind": "StringLiteral",
+      "offset": 3322,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
+      "kind": "Array",
+      "offset": 3521,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3599,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3645,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
+      "kind": "StringLiteral",
+      "offset": 3708,
+      "length": 23,
+      "value": "\"com.VBot.callLogQueue\""
+    },
+    {
+      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3784,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
+      "kind": "StringLiteral",
+      "offset": 33948,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
+      "kind": "BooleanLiteral",
+      "offset": 34423,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
+      "kind": "BooleanLiteral",
+      "offset": 34968,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
       "kind": "IntegerLiteral",
-      "offset": 52442,
+      "offset": 52715,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
       "kind": "IntegerLiteral",
-      "offset": 53959,
+      "offset": 54232,
       "length": 2,
       "value": "30"
     },
@@ -28558,49 +29067,28 @@
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/API\/VBotAPI.swift",
       "kind": "IntegerLiteral",
-      "offset": 634,
+      "offset": 710,
       "length": 3,
       "value": "300"
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/API\/VBotAPI.swift",
       "kind": "StringLiteral",
-      "offset": 5087,
+      "offset": 5181,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/API\/VBotAPI.swift",
       "kind": "StringLiteral",
-      "offset": 5120,
+      "offset": 5214,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/API\/VBotAPI.swift",
       "kind": "StringLiteral",
-      "offset": 5155,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/API\/VBotAPI.swift",
-      "kind": "StringLiteral",
-      "offset": 5188,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/API\/VBotAPI.swift",
-      "kind": "StringLiteral",
-      "offset": 5218,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/API\/VBotAPI.swift",
-      "kind": "StringLiteral",
-      "offset": 5251,
+      "offset": 5249,
       "length": 2,
       "value": "\"\""
     },
@@ -28621,14 +29109,14 @@
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/API\/VBotAPI.swift",
       "kind": "StringLiteral",
-      "offset": 5342,
+      "offset": 5345,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/API\/VBotAPI.swift",
       "kind": "StringLiteral",
-      "offset": 5375,
+      "offset": 5376,
       "length": 2,
       "value": "\"\""
     },
@@ -28640,9 +29128,30 @@
       "value": "\"\""
     },
     {
+      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/API\/VBotAPI.swift",
+      "kind": "StringLiteral",
+      "offset": 5436,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/API\/VBotAPI.swift",
+      "kind": "StringLiteral",
+      "offset": 5469,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/API\/VBotAPI.swift",
+      "kind": "StringLiteral",
+      "offset": 5500,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/Models\/Hotline.swift",
       "kind": "StringLiteral",
-      "offset": 1808,
+      "offset": 1818,
       "length": 14,
       "value": "\"phone_number\""
     },
