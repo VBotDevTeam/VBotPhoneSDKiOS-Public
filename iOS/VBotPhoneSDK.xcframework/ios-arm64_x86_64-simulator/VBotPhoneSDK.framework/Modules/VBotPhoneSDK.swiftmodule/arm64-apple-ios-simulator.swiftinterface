@@ -523,6 +523,7 @@ extension Swift.String {
   @objc optional func callStarted()
   @objc optional func callAccepted()
   @objc optional func callEnded(reason: VBotPhoneSDK.VBotEndCallReason)
+  @objc optional func callEnded(reason: VBotPhoneSDK.VBotEndCallReason, endedBy: VBotPhoneSDK.VBotCallEndParty)
   @objc optional func microphonePermission(status: AVFAudio.AVAudioSession.RecordPermission)
   @objc optional func callMuteStateDidChange(muted: Swift.Bool)
   @objc optional func showCallVC()
@@ -842,6 +843,27 @@ extension Swift.Collection {
       VBBatchedCollection(base: self, size: size)
   }
 }
+@objc public enum VBotCallEndParty : Swift.Int {
+  case caller = 0
+  case callee = 1
+  case unknown = 2
+  case system = 3
+  case server = 4
+  case carrier = 5
+  public var description: Swift.String {
+    get
+  }
+  public var key: Swift.String {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @objc public enum VBotEndCallReason : Swift.Int {
   case timeOut = 1004
   case notReadyForStartCall = 2002
@@ -849,9 +871,9 @@ extension Swift.Collection {
   case invalidPhoneNumber = 2004
   case noDataFromServer = 2005
   case endCallBeforeServerStartCall = 2006
-  case noSIPCallCreated = 2007
+  case noCallCreated = 2007
   case dataInvalid = 2008
-  case noVBotSIPUser = 2009
+  case noVBotUser = 2009
   case authenticatedFailed = 2010
   case anotherCallInProgress = 2011
   case normaly = 1000
@@ -861,11 +883,39 @@ extension Swift.Collection {
   case reportNewIncomingCallFailed = 2016
   case alertDataNotFound = 2017
   case noPushToken = 1018
-  case setupSIPEndpointFailed = 2019
+  case setupEndpointFailed = 2019
   case requestCallKitActionFailed = 2020
-  case noSIPAccount = 2022
+  case noAccount = 2022
   case incomingCallTimeout = 2023
+  case destinationNotFound = 2024
+  case projectExpired = 2025
+  case callerCanceled = 2026
+  case connectionError = 2027
+  case transmissionError = 2028
+  case incorrectInformation = 2029
+  case unauthenticated = 2030
+  case insufficientBalance = 2031
+  case recipientBlocksCalls = 2032
+  case callIntervalNotAllowed = 2033
+  case memberNotActivated = 2034
+  case memberNotInProject = 2035
+  case doNotDisturb = 2036
+  case destinationGone = 2037
+  case recipientAbsent = 2038
+  case packageExpired = 2039
+  case hotlineTelcoNotSupported = 2040
+  case telcoNotFound = 2041
+  case invalidParameter = 2042
   case unknownError = 9996
+  public var description: Swift.String {
+    get
+  }
+  public var key: Swift.String {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func from(sipCode: Swift.Int) -> VBotPhoneSDK.VBotEndCallReason?
+  #endif
   #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
   #endif
@@ -1076,6 +1126,9 @@ extension VBotPhoneSDK.VBSHA2.Variant : Swift.Equatable {}
 extension VBotPhoneSDK.VBSHA2.Variant : Swift.Hashable {}
 extension VBotPhoneSDK.VBSHA2.Variant : Swift.Sendable {}
 extension VBotPhoneSDK.VBSHA2.Variant : Swift.BitwiseCopyable {}
+extension VBotPhoneSDK.VBotCallEndParty : Swift.Equatable {}
+extension VBotPhoneSDK.VBotCallEndParty : Swift.Hashable {}
+extension VBotPhoneSDK.VBotCallEndParty : Swift.RawRepresentable {}
 extension VBotPhoneSDK.VBotEndCallReason : Swift.Equatable {}
 extension VBotPhoneSDK.VBotEndCallReason : Swift.Hashable {}
 extension VBotPhoneSDK.VBotEndCallReason : Swift.RawRepresentable {}

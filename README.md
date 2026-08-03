@@ -2,6 +2,9 @@
 
 VBot Phone SDK – Cho khách hàng khả năng tùy biến giao diện cuộc gọi.
 
+- **Phiên bản hiện tại:** `1.1.8`
+- **Thay đổi phát hành:** xem [CHANGELOG.md](CHANGELOG.md).
+
 ## Code demo
 
 [https://github.com/VBotDevTeam/VBot-iOS-SDK-Example](https://github.com/VBotDevTeam/VBot-iOS-SDK-Example)
@@ -12,9 +15,9 @@ iOS 12.0 trở lên
 
 ## Cài đặt SDK
 
-### Cocoapod
+### CocoaPods qua Git repository
 
-Thêm **VBotPhoneSDK** vào Podfile
+Thêm **VBotPhoneSDK** vào `Podfile`. CocoaPods sẽ clone trực tiếp repository theo tag, không cần package được đăng ký trên CocoaPods Specs/CDN.
 
 ```swift
 platform :ios, '13.5'
@@ -22,7 +25,7 @@ platform :ios, '13.5'
 target 'Runner' do
   use_frameworks! :linkage => :static
 
-  pod 'VBotPhoneSDKiOS-Public', '1.1.7'
+  pod 'VBotPhoneSDKiOS-Public', :git => 'https://github.com/VBotDevTeam/VBotPhoneSDKiOS-Public.git', :tag => '1.1.8'
 
   target 'RunnerTests' do
     inherit! :search_paths
@@ -39,6 +42,12 @@ post_install do |installer|
     end
   end
 end
+```
+
+Sau đó chạy:
+
+```bash
+pod install
 ```
 
 Trong đó phần **config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'** là bắt buộc để VBotPhoneSDK hoạt động với các phiên bản Swift mới hơn
@@ -201,8 +210,8 @@ protocol VBotPhoneDelegate {
     // Cuộc gọi đến được chấp nhận (Khi user chọn chấp nhận cuộc gọi)
     func callAccepted()
 
-    // Cuộc gọi kết thúc, đi kèm nguyên nhân kết thúc cuộc gọi
-    func callEnded(reason: VBotEndCallReason)
+    // Cuộc gọi kết thúc, đi kèm nguyên nhân và bên kết thúc cuộc gọi
+    func callEnded(reason: VBotEndCallReason, endedBy: VBotCallEndParty)
 
     // Trạng thái quyền truy cập microphone
     func microphonePermission(status: AVAudioSession.RecordPermission)
@@ -229,6 +238,8 @@ protocol VBotPhoneDelegate {
     func internetConnectionChanged()
 }
 ```
+
+`callEnded(reason:endedBy:)` là callback nên dùng cho bản mới. `endedBy` có thể là `caller`, `callee`, `system`, `server`, `carrier` hoặc `unknown`. Mỗi `VBotEndCallReason` và `VBotCallEndParty` đều có `key` (dùng cho log/analytics) và `description` (dùng để hiển thị). Callback cũ `callEnded(reason:)` vẫn được hỗ trợ tương thích ngược.
 
 ---
 

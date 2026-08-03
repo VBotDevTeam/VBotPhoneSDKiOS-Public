@@ -239,6 +239,11 @@ typedef NS_ENUM(NSInteger, VBotCallTerminateReason) {
 @property (readonly, nonatomic) NSInteger lastStatus;
 
 /**
+ * The final SIP response code for the INVITE transaction, if one was received.
+ */
+@property (readonly, nonatomic) NSInteger finalSipStatus;
+
+/**
  *  The last status text the call had.
  */
 @property (readonly, nonatomic) NSString * _Nullable lastStatusText;
@@ -303,6 +308,21 @@ typedef NS_ENUM(NSInteger, VBotCallTerminateReason) {
  * Property is true when the call was hungup locally.
  */
 @property (readonly) BOOL userDidHangUp;
+
+/**
+ * Property is true when an inbound SIP BYE was received for this call.
+ */
+@property (readonly) BOOL remoteDidHangUp;
+
+/**
+ * Marks that the remote SIP peer ended this call with an inbound BYE request.
+ */
+- (void)markRemoteDidHangUp;
+
+/**
+ * Records a final SIP response for the INVITE transaction before PJSIP clears it.
+ */
+- (void)recordFinalSipStatus:(NSInteger)statusCode;
 
 @property (readonly) BOOL connected;
 

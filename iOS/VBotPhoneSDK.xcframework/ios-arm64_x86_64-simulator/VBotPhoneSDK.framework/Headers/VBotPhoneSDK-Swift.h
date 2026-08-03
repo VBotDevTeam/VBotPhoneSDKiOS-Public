@@ -322,6 +322,16 @@ SWIFT_CLASS("_TtC12VBotPhoneSDK10HotlineRes")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+/// Bên chủ động kết thúc cuộc gọi, khi SDK xác định được từ SIP signaling.
+typedef SWIFT_ENUM(NSInteger, VBotCallEndParty, open) {
+  VBotCallEndPartyCaller = 0,
+  VBotCallEndPartyCallee = 1,
+  VBotCallEndPartyUnknown = 2,
+  VBotCallEndPartySystem = 3,
+  VBotCallEndPartyServer = 4,
+  VBotCallEndPartyCarrier = 5,
+};
+
 /// Class kết quả cho Objective-C
 SWIFT_CLASS("_TtC12VBotPhoneSDK14VBotCallIntent")
 @interface VBotCallIntent : NSObject
@@ -386,9 +396,9 @@ typedef SWIFT_ENUM(NSInteger, VBotEndCallReason, open) {
   VBotEndCallReasonInvalidPhoneNumber = 2004,
   VBotEndCallReasonNoDataFromServer = 2005,
   VBotEndCallReasonEndCallBeforeServerStartCall = 2006,
-  VBotEndCallReasonNoSIPCallCreated = 2007,
+  VBotEndCallReasonNoCallCreated = 2007,
   VBotEndCallReasonDataInvalid = 2008,
-  VBotEndCallReasonNoVBotSIPUser = 2009,
+  VBotEndCallReasonNoVBotUser = 2009,
   VBotEndCallReasonAuthenticatedFailed = 2010,
   VBotEndCallReasonAnotherCallInProgress = 2011,
   VBotEndCallReasonNormaly = 1000,
@@ -398,10 +408,29 @@ typedef SWIFT_ENUM(NSInteger, VBotEndCallReason, open) {
   VBotEndCallReasonReportNewIncomingCallFailed = 2016,
   VBotEndCallReasonAlertDataNotFound = 2017,
   VBotEndCallReasonNoPushToken = 1018,
-  VBotEndCallReasonSetupSIPEndpointFailed = 2019,
+  VBotEndCallReasonSetupEndpointFailed = 2019,
   VBotEndCallReasonRequestCallKitActionFailed = 2020,
-  VBotEndCallReasonNoSIPAccount = 2022,
+  VBotEndCallReasonNoAccount = 2022,
   VBotEndCallReasonIncomingCallTimeout = 2023,
+  VBotEndCallReasonDestinationNotFound = 2024,
+  VBotEndCallReasonProjectExpired = 2025,
+  VBotEndCallReasonCallerCanceled = 2026,
+  VBotEndCallReasonConnectionError = 2027,
+  VBotEndCallReasonTransmissionError = 2028,
+  VBotEndCallReasonIncorrectInformation = 2029,
+  VBotEndCallReasonUnauthenticated = 2030,
+  VBotEndCallReasonInsufficientBalance = 2031,
+  VBotEndCallReasonRecipientBlocksCalls = 2032,
+  VBotEndCallReasonCallIntervalNotAllowed = 2033,
+  VBotEndCallReasonMemberNotActivated = 2034,
+  VBotEndCallReasonMemberNotInProject = 2035,
+  VBotEndCallReasonDoNotDisturb = 2036,
+  VBotEndCallReasonDestinationGone = 2037,
+  VBotEndCallReasonRecipientAbsent = 2038,
+  VBotEndCallReasonPackageExpired = 2039,
+  VBotEndCallReasonHotlineTelcoNotSupported = 2040,
+  VBotEndCallReasonTelcoNotFound = 2041,
+  VBotEndCallReasonInvalidParameter = 2042,
   VBotEndCallReasonUnknownError = 9996,
 };
 
@@ -551,6 +580,10 @@ SWIFT_PROTOCOL("_TtP12VBotPhoneSDK17VBotPhoneDelegate_")
 - (void)callAccepted;
 /// Được gọi khi cuộc gọi kết thúc
 - (void)callEndedWithReason:(enum VBotEndCallReason)reason;
+/// Được gọi khi cuộc gọi kết thúc, kèm bên chủ động kết thúc nếu SIP xác định được.
+/// Nếu delegate triển khai method này, SDK sẽ không gọi callEnded(reason:) để tránh
+/// phát trùng sự kiện.
+- (void)callEndedWithReason:(enum VBotEndCallReason)reason endedBy:(enum VBotCallEndParty)endedBy;
 /// Được gọi khi trạng thái microphone
 - (void)microphonePermissionWithStatus:(enum AVAudioSessionRecordPermission)status;
 /// Được gọi khi trạng thái microphone thay đổi
@@ -901,6 +934,16 @@ SWIFT_CLASS("_TtC12VBotPhoneSDK10HotlineRes")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+/// Bên chủ động kết thúc cuộc gọi, khi SDK xác định được từ SIP signaling.
+typedef SWIFT_ENUM(NSInteger, VBotCallEndParty, open) {
+  VBotCallEndPartyCaller = 0,
+  VBotCallEndPartyCallee = 1,
+  VBotCallEndPartyUnknown = 2,
+  VBotCallEndPartySystem = 3,
+  VBotCallEndPartyServer = 4,
+  VBotCallEndPartyCarrier = 5,
+};
+
 /// Class kết quả cho Objective-C
 SWIFT_CLASS("_TtC12VBotPhoneSDK14VBotCallIntent")
 @interface VBotCallIntent : NSObject
@@ -965,9 +1008,9 @@ typedef SWIFT_ENUM(NSInteger, VBotEndCallReason, open) {
   VBotEndCallReasonInvalidPhoneNumber = 2004,
   VBotEndCallReasonNoDataFromServer = 2005,
   VBotEndCallReasonEndCallBeforeServerStartCall = 2006,
-  VBotEndCallReasonNoSIPCallCreated = 2007,
+  VBotEndCallReasonNoCallCreated = 2007,
   VBotEndCallReasonDataInvalid = 2008,
-  VBotEndCallReasonNoVBotSIPUser = 2009,
+  VBotEndCallReasonNoVBotUser = 2009,
   VBotEndCallReasonAuthenticatedFailed = 2010,
   VBotEndCallReasonAnotherCallInProgress = 2011,
   VBotEndCallReasonNormaly = 1000,
@@ -977,10 +1020,29 @@ typedef SWIFT_ENUM(NSInteger, VBotEndCallReason, open) {
   VBotEndCallReasonReportNewIncomingCallFailed = 2016,
   VBotEndCallReasonAlertDataNotFound = 2017,
   VBotEndCallReasonNoPushToken = 1018,
-  VBotEndCallReasonSetupSIPEndpointFailed = 2019,
+  VBotEndCallReasonSetupEndpointFailed = 2019,
   VBotEndCallReasonRequestCallKitActionFailed = 2020,
-  VBotEndCallReasonNoSIPAccount = 2022,
+  VBotEndCallReasonNoAccount = 2022,
   VBotEndCallReasonIncomingCallTimeout = 2023,
+  VBotEndCallReasonDestinationNotFound = 2024,
+  VBotEndCallReasonProjectExpired = 2025,
+  VBotEndCallReasonCallerCanceled = 2026,
+  VBotEndCallReasonConnectionError = 2027,
+  VBotEndCallReasonTransmissionError = 2028,
+  VBotEndCallReasonIncorrectInformation = 2029,
+  VBotEndCallReasonUnauthenticated = 2030,
+  VBotEndCallReasonInsufficientBalance = 2031,
+  VBotEndCallReasonRecipientBlocksCalls = 2032,
+  VBotEndCallReasonCallIntervalNotAllowed = 2033,
+  VBotEndCallReasonMemberNotActivated = 2034,
+  VBotEndCallReasonMemberNotInProject = 2035,
+  VBotEndCallReasonDoNotDisturb = 2036,
+  VBotEndCallReasonDestinationGone = 2037,
+  VBotEndCallReasonRecipientAbsent = 2038,
+  VBotEndCallReasonPackageExpired = 2039,
+  VBotEndCallReasonHotlineTelcoNotSupported = 2040,
+  VBotEndCallReasonTelcoNotFound = 2041,
+  VBotEndCallReasonInvalidParameter = 2042,
   VBotEndCallReasonUnknownError = 9996,
 };
 
@@ -1130,6 +1192,10 @@ SWIFT_PROTOCOL("_TtP12VBotPhoneSDK17VBotPhoneDelegate_")
 - (void)callAccepted;
 /// Được gọi khi cuộc gọi kết thúc
 - (void)callEndedWithReason:(enum VBotEndCallReason)reason;
+/// Được gọi khi cuộc gọi kết thúc, kèm bên chủ động kết thúc nếu SIP xác định được.
+/// Nếu delegate triển khai method này, SDK sẽ không gọi callEnded(reason:) để tránh
+/// phát trùng sự kiện.
+- (void)callEndedWithReason:(enum VBotEndCallReason)reason endedBy:(enum VBotCallEndParty)endedBy;
 /// Được gọi khi trạng thái microphone
 - (void)microphonePermissionWithStatus:(enum AVAudioSessionRecordPermission)status;
 /// Được gọi khi trạng thái microphone thay đổi
