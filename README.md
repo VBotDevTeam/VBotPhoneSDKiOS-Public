@@ -113,6 +113,30 @@ VBotPhone.sharedInstance.setup(with: config)
 
 ---
 
+### Kết nối, ngắt kết nối và hotline
+
+```swift
+VBotPhone.sharedInstance.connect(token: token, pushkitToken: pushKitToken) { displayName, error in
+    // error == nil: kết nối thành công
+}
+
+VBotPhone.sharedInstance.getHotlines { hotlines, error in
+    // Lấy danh sách hotline đã được cấp cho thành viên
+}
+
+VBotPhone.sharedInstance.disconnect { error in
+    // Xoá phiên kết nối cục bộ
+}
+```
+
+### Điều khiển cuộc gọi
+
+```swift
+VBotPhone.sharedInstance.endCall { _ in }
+VBotPhone.sharedInstance.muteCall()
+VBotPhone.sharedInstance.onOffSpeaker()
+```
+
 ### Gọi đi
 
 Để thực hiện cuộc gọi đi, sử dụng hàm `startOutgoingCall`:
@@ -319,8 +343,9 @@ Import module trong tệp `.m` hoặc `.mm` của bạn:
     NSLog(@"Cuộc gọi đã được chấp nhận");
 }
 
-- (void)callEndedWithReason:(enum VBotEndCallReason)reason {
-    NSLog(@"Cuộc gọi kết thúc với nguyên nhân: %ld", (long)reason);
+- (void)callEndedWithReason:(enum VBotEndCallReason)reason
+                     endedBy:(enum VBotCallEndParty)endedBy {
+    NSLog(@"Cuộc gọi kết thúc: %@, bởi %@", reason.key, endedBy.key);
 }
 
 - (void)didReceiveExternalCallId:(NSString *)externalCallId {
@@ -335,6 +360,10 @@ Import module trong tệp `.m` hoặc `.mm` của bạn:
 ### Xem thêm
 
 #### VBotEndCallReason và VBotError
+
+Sử dụng callback mới `callEnded(reason:endedBy:)`. `reason.rawValue`, `reason.key`, `reason.description` và `endedBy.key` phù hợp để xử lý nghiệp vụ, hiển thị và analytics. Danh sách đầy đủ các reason, mã SIP và bên kết thúc xem tại [CHANGELOG.md](CHANGELOG.md).
+
+> Đoạn enum legacy dưới đây không còn là nguồn tham chiếu. Các dự án mới phải dùng `VBotEndCallReason` trong changelog và callback hai tham số ở trên.
 
 ```
     // Timeout
