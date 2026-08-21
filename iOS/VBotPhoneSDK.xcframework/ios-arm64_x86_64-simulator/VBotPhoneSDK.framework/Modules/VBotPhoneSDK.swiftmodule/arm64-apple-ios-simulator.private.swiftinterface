@@ -391,8 +391,9 @@ extension Foundation.Data {
 @usableFromInline
 internal typealias VBCipherOperationOnBlock = (_ block: Swift.ArraySlice<Swift.UInt8>) -> Swift.Array<Swift.UInt8>?
 public struct CallParams {
+  public var isCampaign: Swift.Bool
   #if compiler(>=5.3) && $NonescapableTypes
-  public init(uuid: Foundation.UUID, name: Swift.String, avatar: Swift.String, hotline: Swift.String, number: Swift.String, transId: Swift.String, metaData: [Swift.String : Any]? = nil, typeCall: VBotPhoneSDK.TypeCall, externalCallId: Swift.String? = nil)
+  public init(uuid: Foundation.UUID, name: Swift.String, avatar: Swift.String, hotline: Swift.String, number: Swift.String, transId: Swift.String, metaData: [Swift.String : Any]? = nil, typeCall: VBotPhoneSDK.TypeCall, externalCallId: Swift.String? = nil, isCampaign: Swift.Bool = false)
   #endif
 }
 public enum SocketMethod : Swift.String, Swift.CaseIterable {

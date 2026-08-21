@@ -3984,9 +3984,95 @@
         "printedName": "CallParams",
         "children": [
           {
+            "kind": "Var",
+            "name": "isCampaign",
+            "printedName": "isCampaign",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:12VBotPhoneSDK10CallParamsV10isCampaignSbvp",
+            "mangledName": "$s12VBotPhoneSDK10CallParamsV10isCampaignSbvp",
+            "moduleName": "VBotPhoneSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:12VBotPhoneSDK10CallParamsV10isCampaignSbvg",
+                "mangledName": "$s12VBotPhoneSDK10CallParamsV10isCampaignSbvg",
+                "moduleName": "VBotPhoneSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:12VBotPhoneSDK10CallParamsV10isCampaignSbvs",
+                "mangledName": "$s12VBotPhoneSDK10CallParamsV10isCampaignSbvs",
+                "moduleName": "VBotPhoneSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:12VBotPhoneSDK10CallParamsV10isCampaignSbvM",
+                "mangledName": "$s12VBotPhoneSDK10CallParamsV10isCampaignSbvM",
+                "moduleName": "VBotPhoneSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(uuid:name:avatar:hotline:number:transId:metaData:typeCall:externalCallId:)",
+            "printedName": "init(uuid:name:avatar:hotline:number:transId:metaData:typeCall:externalCallId:isCampaign:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -4078,11 +4164,18 @@
                 ],
                 "hasDefaultArg": true,
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:12VBotPhoneSDK10CallParamsV4uuid4name6avatar7hotline6number7transId8metaData04typeD008externaldL0AC10Foundation4UUIDV_S5SSDySSypGSgAA04TypeD0OSSSgtcfc",
-            "mangledName": "$s12VBotPhoneSDK10CallParamsV4uuid4name6avatar7hotline6number7transId8metaData04typeD008externaldL0AC10Foundation4UUIDV_S5SSDySSypGSgAA04TypeD0OSSSgtcfc",
+            "usr": "s:12VBotPhoneSDK10CallParamsV4uuid4name6avatar7hotline6number7transId8metaData04typeD008externaldL010isCampaignAC10Foundation4UUIDV_S5SSDySSypGSgAA04TypeD0OSSSgSbtcfc",
+            "mangledName": "$s12VBotPhoneSDK10CallParamsV4uuid4name6avatar7hotline6number7transId8metaData04typeD008externaldL010isCampaignAC10Foundation4UUIDV_S5SSDySSypGSgAA04TypeD0OSSSgSbtcfc",
             "moduleName": "VBotPhoneSDK",
             "declAttributes": [
               "AccessControl"
@@ -25998,7 +26091,7 @@
       "kind": "StringLiteral",
       "offset": 126,
       "length": 7,
-      "value": "\"1.1.8\""
+      "value": "\"1.1.9\""
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/Helpers\/VBotKeys.swift",
@@ -27429,6 +27522,20 @@
       "value": "0"
     },
     {
+      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/API\/VBotModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 435,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/API\/VBotModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 657,
+      "length": 5,
+      "value": "false"
+    },
+    {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBCryptoSwift\/VBChecksum.swift",
       "kind": "Array",
       "offset": 1049,
@@ -27724,8 +27831,15 @@
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/Helpers\/VBotUltils.swift",
+      "kind": "BooleanLiteral",
+      "offset": 527,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/Helpers\/VBotUltils.swift",
       "kind": "FloatLiteral",
-      "offset": 5948,
+      "offset": 6053,
       "length": 3,
       "value": "1.0"
     },
@@ -28061,35 +28175,35 @@
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
       "kind": "StringLiteral",
-      "offset": 36844,
+      "offset": 36941,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
       "kind": "BooleanLiteral",
-      "offset": 37319,
+      "offset": 37416,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
       "kind": "BooleanLiteral",
-      "offset": 37864,
+      "offset": 37961,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
       "kind": "IntegerLiteral",
-      "offset": 55611,
+      "offset": 55708,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/VBotPhone.swift",
       "kind": "IntegerLiteral",
-      "offset": 57128,
+      "offset": 57225,
       "length": 2,
       "value": "30"
     },
@@ -28362,14 +28476,14 @@
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/CallKit\/VBotPushPayload.swift",
       "kind": "StringLiteral",
-      "offset": 704,
+      "offset": 730,
       "length": 14,
       "value": "\"project_name\""
     },
     {
       "filePath": "\/Users\/datnguyenquoc\/Documents\/GitHub\/VBotPhone-iOS-Public\/VBotPhoneSDK\/CallKit\/VBotPushPayload.swift",
       "kind": "StringLiteral",
-      "offset": 896,
+      "offset": 922,
       "length": 14,
       "value": "\"project_code\""
     },

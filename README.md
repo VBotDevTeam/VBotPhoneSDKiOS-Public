@@ -2,7 +2,7 @@
 
 VBot Phone SDK – Cho khách hàng khả năng tùy biến giao diện cuộc gọi.
 
-- **Phiên bản hiện tại:** `1.1.8`
+- **Phiên bản hiện tại:** `1.1.9`
 - **Thay đổi phát hành:** xem [CHANGELOG.md](CHANGELOG.md).
 
 ## Code demo
@@ -25,7 +25,7 @@ platform :ios, '13.5'
 target 'Runner' do
   use_frameworks! :linkage => :static
 
-  pod 'VBotPhoneSDKiOS-Public', :git => 'https://github.com/VBotDevTeam/VBotPhoneSDKiOS-Public.git', :tag => '1.1.8'
+  pod 'VBotPhoneSDKiOS-Public', :git => 'https://github.com/VBotDevTeam/VBotPhoneSDKiOS-Public.git', :tag => '1.1.9'
 
   target 'RunnerTests' do
     inherit! :search_paths
