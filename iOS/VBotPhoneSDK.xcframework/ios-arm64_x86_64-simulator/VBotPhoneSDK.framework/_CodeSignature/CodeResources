@@ -214,7 +214,7 @@
 		</data>
 		<key>Modules/VBotPhoneSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		5yZIk4C9lDipQz7/KzL3cohtjvg=
+		kLKEcN1quWHR3Ck7R25/UCudT+k=
 		</data>
 		<key>Modules/VBotPhoneSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -230,11 +230,11 @@
 		</data>
 		<key>Modules/VBotPhoneSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		lG+iITJYCgYSotiCAG6bmI2fkr4=
+		WTiu37PECT6jbiY2iQLzY95Zpe4=
 		</data>
 		<key>Modules/VBotPhoneSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		5yZIk4C9lDipQz7/KzL3cohtjvg=
+		kLKEcN1quWHR3Ck7R25/UCudT+k=
 		</data>
 		<key>Modules/VBotPhoneSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -250,7 +250,7 @@
 		</data>
 		<key>Modules/VBotPhoneSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ih248yzq82VBa71QnLC0W4BArNw=
+		vALfDqixIAvOShRWYDshczSjlX4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -672,7 +672,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fBZdvEwdBq/Kb1YnkEqjgJ2yuLfPF/rinvxWddR9dXg=
+			H/mhLjXFZ+pUdTZfVqod9JHEkuZi9vjMVb9nkM/7TBY=
 			</data>
 		</dict>
 		<key>Modules/VBotPhoneSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -700,14 +700,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JyT/v89Kjybq9nITkfoL7ei7SOniiFaRqW5jTG9+SDs=
+			2y5T5GVdxLpnQK4iLCV4In1ODeaZ+jgehay4ZKxGP6w=
 			</data>
 		</dict>
 		<key>Modules/VBotPhoneSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fBZdvEwdBq/Kb1YnkEqjgJ2yuLfPF/rinvxWddR9dXg=
+			H/mhLjXFZ+pUdTZfVqod9JHEkuZi9vjMVb9nkM/7TBY=
 			</data>
 		</dict>
 		<key>Modules/VBotPhoneSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -735,7 +735,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FT4fSVlio+51OWKP2d/lvvrsKnTS18zc5MEGI8X2KT4=
+			8vHoL3X4ryTCGlUBOZqKJH/KsflQ0daZGq69k7eiUiU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
