@@ -2,6 +2,21 @@
 
 Các thay đổi của VBot Phone SDK iOS.
 
+## 1.1.10
+
+_Ngày phát hành: 11/09/2026_
+
+### Tính năng mới & Cải tiến
+
+- Bổ sung các sự kiện mới vào `VBotEndCallReason`.
+- Xử lý rớt mạng.
+
+### Cài đặt
+
+```ruby
+pod 'VBotPhoneSDKiOS-Public', :git => 'https://github.com/VBotDevTeam/VBotPhoneSDKiOS-Public.git', :tag => '1.1.10'
+```
+
 ## 1.1.9
 
 _Ngày phát hành: 21/08/2026_

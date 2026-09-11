@@ -907,6 +907,8 @@ extension Swift.Collection {
   case hotlineTelcoNotSupported = 2040
   case telcoNotFound = 2041
   case invalidParameter = 2042
+  case userNotInGroup = 2043
+  case doNotCall = 2044
   case unknownError = 9996
   public var description: Swift.String {
     get
@@ -979,7 +981,6 @@ public enum TypeCall : Swift.String {
   @objc final public let message: Swift.String
   @objc final public let data: [VBotPhoneSDK.VBotHotline]
   required public init(from decoder: any Swift.Decoder) throws
-  @objc public func logResponse()
   @objc deinit
 }
 @objc @objcMembers public class VBotHotline : ObjectiveC.NSObject, Swift.Decodable {

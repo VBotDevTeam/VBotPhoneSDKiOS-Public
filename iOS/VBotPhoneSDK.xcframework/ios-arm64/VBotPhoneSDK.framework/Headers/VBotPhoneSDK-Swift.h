@@ -316,8 +316,6 @@ SWIFT_CLASS("_TtC12VBotPhoneSDK10HotlineRes")
 @property (nonatomic, readonly) NSInteger error;
 @property (nonatomic, readonly, copy) NSString * _Nonnull message;
 @property (nonatomic, readonly, copy) NSArray<VBotHotline *> * _Nonnull data;
-/// Hàm log response API
-- (void)logResponse;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -431,6 +429,8 @@ typedef SWIFT_ENUM(NSInteger, VBotEndCallReason, open) {
   VBotEndCallReasonHotlineTelcoNotSupported = 2040,
   VBotEndCallReasonTelcoNotFound = 2041,
   VBotEndCallReasonInvalidParameter = 2042,
+  VBotEndCallReasonUserNotInGroup = 2043,
+  VBotEndCallReasonDoNotCall = 2044,
   VBotEndCallReasonUnknownError = 9996,
 };
 
